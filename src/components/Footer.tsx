@@ -9,6 +9,84 @@ export default function Footer() {
       {/* Accent back-glow lights */}
       <div className="absolute bottom-0 right-[10%] w-80 h-80 rounded-full bg-primary-pink/5 blur-[100px] pointer-events-none" />
 
+      {/* Footer Ambient Animated Water Bubbles (11 High-Fidelity Glassmorphism Elements with realistic transparent centers) */}
+      <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden select-none">
+        {/* Bubble 1: Left Rise */}
+        <div 
+          className="absolute bottom-[-50px] left-[6%] w-13 h-13 rounded-full border border-white/70 dark:border-white/40 bg-gradient-to-tr from-pink-500/5 via-white/1 to-blue-500/5 shadow-[inset_-3px_-3px_9px_rgba(255,255,255,0.9),inset_3px_3px_6px_rgba(0,0,0,0.012),0_10px_20px_rgba(255,92,168,0.1)] backdrop-blur-[0.5px] animate-bubble-footer-1" 
+          style={{ animationDelay: "0s" }}
+        >
+          {/* Main top specular glint */}
+          <div className="absolute top-1.2 left-1.5 w-[38%] h-[20%] rounded-full bg-gradient-to-b from-white/95 to-white/20 rotate-[-15deg] shadow-[0_1px_2px_rgba(255,255,255,0.8)]" />
+          {/* Bottom backside reflection */}
+          <div className="absolute bottom-1 right-1.5 w-[18%] h-[18%] rounded-full bg-white/35 filter blur-[0.2px]" />
+        </div>
+
+        {/* Bubble 2: Left-Center Rise (Small) */}
+        <div 
+          className="absolute bottom-[-40px] left-[20%] w-8 h-8 rounded-full border border-white/70 dark:border-white/45 bg-gradient-to-tr from-white/8 to-white/0 shadow-[inset_-2px_-2px_6px_rgba(255,255,255,0.95),0_6px_12px_rgba(255,255,255,0.12)] animate-bubble-footer-2" 
+          style={{ animationDelay: "4s" }}
+        >
+          <div className="absolute top-0.8 left-1 w-[40%] h-[22%] rounded-full bg-white/95 rotate-[-15deg]" />
+        </div>
+
+        {/* Bubble 3: Left-Center Wide Rise (Medium) */}
+        <div 
+          className="absolute bottom-[-50px] left-[34%] w-11 h-11 rounded-full border border-white/70 dark:border-white/40 bg-gradient-to-tr from-pink-500/4 via-white/1 to-blue-500/4 shadow-[inset_-2.5px_-2.5px_8px_rgba(255,255,255,0.9)] animate-bubble-footer-3 hidden sm:block" 
+          style={{ animationDelay: "1.5s" }}
+        >
+          <div className="absolute top-1 left-1.2 w-[38%] h-[20%] rounded-full bg-gradient-to-b from-white/95 to-white/25 rotate-[-15deg] shadow-[0_1px_2px_rgba(255,255,255,0.8)]" />
+          <div className="absolute bottom-1 right-1.2 w-[18%] h-[18%] rounded-full bg-white/30 filter blur-[0.1px]" />
+        </div>
+
+        {/* Bubble 4: Center Rise */}
+        <div 
+          className="absolute bottom-[-40px] left-[48%] w-10 h-10 rounded-full border border-white/70 dark:border-white/40 bg-gradient-to-tr from-white/8 to-white/0 shadow-[inset_-2.2px_-2.2px_7px_rgba(255,255,255,0.9)] animate-bubble-footer-1" 
+          style={{ animationDelay: "6s" }}
+        >
+          <div className="absolute top-1 left-1.2 w-[38%] h-[20%] rounded-full bg-white/95 rotate-[-15deg]" />
+        </div>
+
+        {/* Bubble 5: Middle Right Rise */}
+        <div 
+          className="absolute bottom-[-50px] left-[64%] w-12 h-12 rounded-full border border-white/70 dark:border-white/40 bg-gradient-to-tr from-indigo-500/5 via-white/1 to-pink-500/5 shadow-[inset_-2.8px_-2.8px_8.5px_rgba(255,255,255,0.9),0_8px_16px_rgba(99,102,241,0.08)] animate-bubble-footer-2" 
+          style={{ animationDelay: "9s" }}
+        >
+          <div className="absolute top-1 left-1.5 w-[38%] h-[20%] rounded-full bg-gradient-to-b from-white/95 to-white/20 rotate-[-15deg] shadow-[0_1px_2px_rgba(255,255,255,0.8)]" />
+          <div className="absolute bottom-1 right-1.5 w-[18%] h-[18%] rounded-full bg-white/35 filter blur-[0.2px]" />
+        </div>
+
+        {/* Bubble 6: Right Rise Huge */}
+        <div 
+          className="absolute bottom-[-60px] right-[22%] w-15 h-15 rounded-full border border-white/75 dark:border-white/45 bg-gradient-to-tr from-pink-500/5 via-white/1 to-blue-500/5 shadow-[inset_-3.5px_-3.5px_11px_rgba(255,255,255,0.92),inset_3.5px_3px_7px_rgba(0,0,0,0.012),0_12px_24px_rgba(244,63,94,0.08)] backdrop-blur-[0.5px] animate-bubble-footer-3 hidden md:block" 
+          style={{ animationDelay: "3s" }}
+        >
+          <div className="absolute top-1.5 left-2 w-[38%] h-[20%] rounded-full bg-gradient-to-b from-white/95 to-white/22 rotate-[-15deg] shadow-[0_1.5px_3px_rgba(255,255,255,0.8)]" />
+          <div className="absolute bottom-1.5 right-2  w-[22%] h-[22%] rounded-full bg-white/40 filter blur-[0.2px]" />
+        </div>
+
+        {/* Bubble 7: Right Edge Soft Mini */}
+        <div 
+          className="absolute bottom-[-40px] right-[8%] w-9 h-9 rounded-full border border-white/70 dark:border-white/45 bg-gradient-to-tr from-blue-500/4 via-white/1 to-pink-500/4 shadow-[inset_-1.8px_-1.8px_5.5px_rgba(255,255,255,0.9)] animate-bubble-footer-1" 
+          style={{ animationDelay: "11s" }}
+        >
+          <div className="absolute top-0.8 left-1 w-[40%] h-[22%] rounded-full bg-white/95 rotate-[-15deg]" />
+        </div>
+
+        {/* Static Swaying Bubbles for Upper Ambient Depth */}
+        <div className="absolute top-[15%] left-[12%] w-11 h-11 rounded-full border border-white/65 dark:border-white/35 bg-gradient-to-tr from-white/5 to-white/0 animate-bubble-sway-slow opacity-85 hidden lg:block shadow-[inset_-2.5px_-2.5px_7.5px_rgba(255,255,255,0.9)]">
+          <div className="absolute top-1 left-2 w-[38%] h-[20%] rounded-full bg-white/60 rotate-[-15deg]" />
+        </div>
+
+        <div className="absolute top-[38%] right-[11%] w-8 h-8 rounded-full border border-white/65 dark:border-white/35 bg-gradient-to-tr from-white/5 to-white/0 animate-bubble-sway-medium opacity-75 hidden lg:block shadow-[inset_-1.8px_-1.8px_5.5px_rgba(255,255,255,0.9)]">
+          <div className="absolute top-0.8 left-1.2 w-[38%] h-[20%] rounded-full bg-white/60 rotate-[-15deg]" />
+        </div>
+
+        <div className="absolute top-[22%] right-[32%] w-13 h-13 rounded-full border border-white/65 dark:border-white/35 bg-gradient-to-tr from-pink-500/4 via-white/1 to-blue-500/4 animate-bubble-sway-slow opacity-80 hidden sm:block shadow-[inset_-3px_-3px_9px_rgba(255,255,255,0.9)]">
+          <div className="absolute top-1.5 left-2 w-[38%] h-[20%] rounded-full bg-white/60 rotate-[-15deg]" />
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 sm:gap-8 lg:gap-12 mb-16">
           

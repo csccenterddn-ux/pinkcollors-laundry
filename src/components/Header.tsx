@@ -102,25 +102,45 @@ export default function Header({ onScheduleClick, isDarkMode, onThemeToggle }: H
             <button
               id="theme-toggle-desktop"
               onClick={onThemeToggle}
-              className="w-10 h-10 rounded-xl border border-slate-200/60 dark:border-slate-800 bg-white/50 dark:bg-slate-900/40 hover:bg-slate-100 dark:hover:bg-slate-800/80 text-slate-700 dark:text-slate-300 hover:text-primary-pink dark:hover:text-primary-pink transition-all duration-300 flex items-center justify-center cursor-pointer shadow-sm group"
+              className="w-10 h-10 rounded-xl border border-slate-200/60 dark:border-slate-800 bg-white/50 dark:bg-slate-900/40 hover:bg-slate-100 dark:hover:bg-slate-800/85 text-slate-700 dark:text-slate-300 hover:text-primary-pink dark:hover:text-primary-pink transition-all duration-300 flex items-center justify-center cursor-pointer shadow-sm group relative overflow-hidden backdrop-blur-md"
               aria-label="Toggle Theme"
             >
-              {isDarkMode ? (
-                <Sun className="w-4 h-4 text-amber-400 fill-amber-400/10 transition-transform duration-500 rotate-0 scale-100 group-hover:rotate-45" />
-              ) : (
-                <Moon className="w-4 h-4 text-blue-600 transition-transform duration-500 rotate-0 scale-100 group-hover:-rotate-12" />
-              )}
+              <AnimatePresence mode="wait" initial={false}>
+                {isDarkMode ? (
+                  <motion.div
+                    key="sun-desktop"
+                    initial={{ rotate: -90, scale: 0.5, opacity: 0 }}
+                    animate={{ rotate: 0, scale: 1, opacity: 1 }}
+                    exit={{ rotate: 90, scale: 0.5, opacity: 0 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="flex items-center justify-center pointer-events-none"
+                  >
+                    <Sun className="w-4 h-4 text-amber-500 fill-amber-500/10" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="moon-desktop"
+                    initial={{ rotate: 90, scale: 0.5, opacity: 0 }}
+                    animate={{ rotate: 0, scale: 1, opacity: 1 }}
+                    exit={{ rotate: -90, scale: 0.5, opacity: 0 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="flex items-center justify-center pointer-events-none"
+                  >
+                    <Moon className="w-4 h-4 text-indigo-600 fill-indigo-600/5" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </button>
 
             <a
               id="header-phone-cta"
               href="tel:+919300119933"
-              className="flex items-center gap-2 text-xs font-bold text-deep-navy/90 dark:text-slate-200/90 hover:text-primary-pink dark:hover:text-primary-pink transition-colors duration-200"
+              className="flex items-center gap-2 text-xs font-bold text-deep-navy/95 dark:text-slate-100 hover:text-[#3B82F6] dark:hover:text-blue-400 transition-colors duration-300 select-all"
             >
-              <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-900 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-primary-pink transition-colors duration-200">
-                <Phone className="w-3.5 h-3.5" />
+              <div className="w-8 h-8 rounded-lg bg-[#EEF4FF] dark:bg-blue-500/10 flex items-center justify-center text-[#3B82F6] dark:text-blue-400 hover:bg-[#DBE9FE] dark:hover:bg-blue-500/20 hover:scale-105 active:scale-95 hover:shadow-[0_0_12px_rgba(59,130,246,0.25)] transition-all duration-300">
+                <Phone className="w-3.5 h-3.5 fill-blue-500/5 dark:fill-blue-400/5" />
               </div>
-              <span className="font-mono text-[11px]">+91 93001 19933</span>
+              <span className="font-mono text-[11px] font-semibold text-slate-700 dark:text-slate-200 transition-colors duration-300">+91 93001 19933</span>
             </a>
             <button
               id="header-pickup-cta"
@@ -139,22 +159,42 @@ export default function Header({ onScheduleClick, isDarkMode, onThemeToggle }: H
             <button
               id="theme-toggle-mobile"
               onClick={onThemeToggle}
-              className="w-9 h-9 rounded-xl border border-slate-200/50 dark:border-slate-800 bg-white/50 dark:bg-slate-900/40 text-slate-700 dark:text-slate-300 hover:text-primary-pink transition-colors duration-200 flex items-center justify-center cursor-pointer"
+              className="w-9 h-9 rounded-xl border border-slate-200/50 dark:border-slate-800 bg-white/50 dark:bg-slate-900/40 text-slate-700 dark:text-slate-300 hover:text-primary-pink transition-all duration-300 flex items-center justify-center cursor-pointer relative overflow-hidden backdrop-blur-md shadow-sm"
               aria-label="Toggle Theme"
             >
-              {isDarkMode ? (
-                <Sun className="w-4 h-4 text-amber-400 fill-amber-400/10" />
-              ) : (
-                <Moon className="w-4 h-4 text-blue-600" />
-              )}
+              <AnimatePresence mode="wait" initial={false}>
+                {isDarkMode ? (
+                  <motion.div
+                    key="sun-mobile"
+                    initial={{ rotate: -90, scale: 0.5, opacity: 0 }}
+                    animate={{ rotate: 0, scale: 1, opacity: 1 }}
+                    exit={{ rotate: 90, scale: 0.5, opacity: 0 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="flex items-center justify-center pointer-events-none"
+                  >
+                    <Sun className="w-4 h-4 text-amber-500 fill-amber-500/10" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="moon-mobile"
+                    initial={{ rotate: 90, scale: 0.5, opacity: 0 }}
+                    animate={{ rotate: 0, scale: 1, opacity: 1 }}
+                    exit={{ rotate: -90, scale: 0.5, opacity: 0 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="flex items-center justify-center pointer-events-none"
+                  >
+                    <Moon className="w-4 h-4 text-indigo-600 fill-indigo-600/5" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </button>
 
             <a
               id="header-mobile-phone-cta"
               href="tel:+919300119933"
-              className="w-9 h-9 rounded-xl bg-slate-100/90 dark:bg-slate-900/90 flex items-center justify-center text-slate-700 dark:text-slate-300"
+              className="w-9 h-9 rounded-xl bg-[#EEF4FF] dark:bg-blue-500/10 flex items-center justify-center text-[#3B82F6] dark:text-blue-400 hover:bg-[#DBE9FE] dark:hover:bg-blue-500/22 active:scale-95 hover:shadow-[0_0_10px_rgba(59,130,246,0.2)] hover:scale-105 transition-all duration-300"
             >
-              <Phone className="w-3.5 h-3.5" />
+              <Phone className="w-3.5 h-3.5 fill-blue-500/5 dark:fill-blue-400/5" />
             </a>
             
             <button
@@ -224,12 +264,12 @@ export default function Header({ onScheduleClick, isDarkMode, onThemeToggle }: H
                   <a
                     id="drawer-phone-cta"
                     href="tel:+919300119933"
-                    className="w-full inline-flex items-center justify-center gap-2 py-1.5 px-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-150 dark:border-slate-800 shadow-[0_2px_8px_rgba(15,23,42,0.02)] hover:border-primary-pink/30 hover:shadow-md text-deep-navy dark:text-slate-200 text-[10.5px] font-bold font-mono transition-all duration-200 active:scale-98"
+                    className="w-full inline-flex items-center justify-center gap-2 py-1.5 px-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-150 dark:border-slate-850 shadow-[0_2px_8px_rgba(15,23,42,0.02)] hover:border-blue-400/30 dark:hover:border-blue-500/35 hover:shadow-md text-[#3B82F6] dark:text-blue-400 text-[10.5px] font-bold font-mono transition-all duration-200 active:scale-98"
                   >
-                    <div className="w-5.5 h-5.5 rounded-lg bg-pink-50 dark:bg-pink-950/30 flex items-center justify-center text-primary-pink">
+                    <div className="w-5.5 h-5.5 rounded-lg bg-[#EEF4FF] dark:bg-blue-500/15 flex items-center justify-center text-[#3B82F6] dark:text-blue-400">
                       <Phone className="w-3 h-3" />
                     </div>
-                    <span>+91 93001 19933</span>
+                    <span className="text-slate-700 dark:text-slate-200 font-semibold tracking-wide">+91 93001 19933</span>
                   </a>
 
                   {/* Active Premium CTA Button */}

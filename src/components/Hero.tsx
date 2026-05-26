@@ -28,11 +28,13 @@ export default function Hero({ onScheduleClick }: HeroProps) {
   return (
     <section
       id="home"
-      className="relative min-h-screen pt-28 pb-16 lg:pt-36 lg:pb-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg overflow-hidden flex items-center transition-colors duration-300"
+      className="relative min-h-[85vh] lg:min-h-[88vh] pt-20 pb-12 sm:pt-24 lg:pt-28 lg:pb-16 bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg overflow-hidden flex items-center transition-colors duration-300"
     >
       {/* Decorative background gradients */}
       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-primary-pink/5 dark:bg-primary-pink/2 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[10%] right-[-10%] w-[40%] h-[50%] rounded-full bg-primary-pink/10 dark:bg-primary-pink/4 blur-[130px] pointer-events-none" />
+
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">

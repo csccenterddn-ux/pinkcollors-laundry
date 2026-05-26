@@ -42,14 +42,14 @@ export default function FloatingWhatsApp({ onScheduleClick }: FloatingWhatsAppPr
       </div>
 
       {/* Sticky Mobile CTA Bar (Shown on small screens, hidden on lg screens) */}
-      <div className="lg:hidden fixed bottom-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-t border-slate-100 px-4 py-3 shadow-[0_-8px_24px_rgba(15,23,42,0.08)]">
+      <div className="lg:hidden fixed bottom-0 left-0 w-full z-50 bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-t border-slate-100 dark:border-white/5 px-4 py-3 shadow-[0_-8px_24px_rgba(15,23,42,0.08)]">
         <div className="grid grid-cols-2 gap-3">
           <a
             href="tel:+919300119933"
-            className="flex items-center justify-center gap-1.5 py-3 rounded-xl border border-slate-200 text-deep-navy text-xs font-bold font-sans"
+            className="flex items-center justify-center gap-1.5 py-3 rounded-xl bg-[#EEF4FF] dark:bg-blue-500/12 border border-blue-200/50 dark:border-blue-900/30 text-[#3B82F6] dark:text-blue-400 text-xs font-bold font-sans hover:bg-[#DBE9FE] dark:hover:bg-blue-500/22 shadow-sm shadow-blue-500/5 active:scale-95 transition-all"
           >
-            <Phone className="w-4 h-4 text-primary-pink" />
-            +91 93001
+            <Phone className="w-4 h-4 text-[#3B82F6] dark:text-blue-400 fill-blue-500/5" />
+            Call Support
           </a>
           <button
             onClick={onScheduleClick}

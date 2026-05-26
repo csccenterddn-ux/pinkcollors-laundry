@@ -22,9 +22,8 @@ export default function App() {
       const savedTheme = localStorage.getItem("theme");
       if (savedTheme === "dark") return true;
       if (savedTheme === "light") return false;
-      return window.matchMedia("(prefers-color-scheme: dark)").matches;
     }
-    return false;
+    return false; // Default to Light Mode on first load/visit (no auto OS schema check)
   });
 
   // Sync dark mode class on DOM root for Tailwind v4 styles
