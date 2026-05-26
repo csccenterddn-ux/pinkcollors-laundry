@@ -28,7 +28,7 @@ export default function Hero({ onScheduleClick }: HeroProps) {
   return (
     <section
       id="home"
-      className="relative min-h-[85vh] lg:min-h-[88vh] pt-20 pb-12 sm:pt-24 lg:pt-28 lg:pb-16 bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg overflow-hidden flex items-center transition-colors duration-300"
+      className="relative min-h-[55vh] md:min-h-[60vh] lg:min-h-[68vh] pt-2 pb-8 sm:pt-4 sm:pb-10 lg:pt-6 lg:pb-12 bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg overflow-hidden flex items-center transition-colors duration-300"
     >
       {/* Decorative background gradients */}
       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-primary-pink/5 dark:bg-primary-pink/2 blur-[120px] pointer-events-none" />
@@ -37,7 +37,7 @@ export default function Hero({ onScheduleClick }: HeroProps) {
 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           
           {/* Headline Content column (7 cols on large screens) */}
           <div className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left">
@@ -46,7 +46,7 @@ export default function Hero({ onScheduleClick }: HeroProps) {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-pink/10 border border-primary-pink/20 text-primary-pink dark:text-primary-pink text-xs font-semibold uppercase tracking-wider mx-auto lg:mx-0 w-fit mb-6"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-pink/10 border border-primary-pink/20 text-primary-pink dark:text-primary-pink text-xs font-semibold uppercase tracking-wider mx-auto lg:mx-0 w-fit mb-4 md:mb-5"
             >
               <Sparkles className="w-3.5 h-3.5 animate-pulse" />
               <span>Patna's Premium Fabric Care Startup</span>
@@ -57,7 +57,7 @@ export default function Hero({ onScheduleClick }: HeroProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight text-deep-navy dark:text-[#F8FAFC] leading-[1.1] mb-6"
+              className="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight text-deep-navy dark:text-[#F8FAFC] leading-[1.1] mb-4 md:mb-5"
             >
               Premium Laundry Care <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-pink via-pink-600 to-deep-navy dark:to-indigo-300">
@@ -70,7 +70,7 @@ export default function Hero({ onScheduleClick }: HeroProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-sans text-base sm:text-lg text-muted-gray dark:text-[#CBD5E1] leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8"
+              className="font-sans text-base sm:text-lg text-muted-gray dark:text-[#CBD5E1] leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-5 md:mb-6"
             >
               Professional dry cleaning, express laundry, fabric conditioning, and doorstep pickup & delivery available 24/7 across Patna. Your garments deserve the elite touch.
             </motion.p>
@@ -106,7 +106,7 @@ export default function Hero({ onScheduleClick }: HeroProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-10 border-t border-slate-200/50 dark:border-slate-800/80 mt-10 max-w-lg mx-auto lg:mx-0 text-left"
+              className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-6 mt-6 md:pt-8 md:mt-8 max-w-lg mx-auto lg:mx-0 text-left"
             >
               <div className="flex items-center gap-2.5">
                 <div className="w-9 h-9 rounded-lg bg-emerald-50 dark:bg-emerald-950/20 flex items-center justify-center text-emerald-500">
@@ -148,7 +148,7 @@ export default function Hero({ onScheduleClick }: HeroProps) {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="relative w-full max-w-[440px] aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/80 dark:border-slate-800/85 bg-slate-100 dark:bg-slate-900 group"
+              className="relative w-full max-w-[400px] lg:max-w-[440px] aspect-[1.15/1] sm:aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/80 dark:border-slate-800/85 bg-slate-100 dark:bg-slate-900 group"
             >
               <img
                 src={heroImageUrl}
