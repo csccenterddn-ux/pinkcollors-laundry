@@ -73,7 +73,7 @@ export default function PickupExperience() {
   };
 
   return (
-    <section id="pickup-experience" className="py-24 bg-white relative overflow-hidden">
+    <section id="pickup-experience" className="py-24 bg-white dark:bg-dark-surface relative overflow-hidden transition-colors duration-300">
       {/* Dynamic background lighting */}
       <div className="absolute top-[20%] right-[-10%] w-[350px] h-[350px] rounded-full bg-primary-pink/5 blur-[120px]" />
       
@@ -85,16 +85,16 @@ export default function PickupExperience() {
             <span className="font-mono text-xs font-extrabold tracking-wider text-primary-pink uppercase mb-3 block">
               Instant Collection
             </span>
-            <h2 className="font-display font-black text-3xl sm:text-4.5xl text-deep-navy leading-tight mb-4">
+            <h2 className="font-display font-black text-3xl sm:text-4.5xl text-deep-navy dark:text-[#F8FAFC] leading-tight mb-4">
               Laundry Pickup <br />
               <span className="text-primary-pink">In Minutes</span>
             </h2>
-            <p className="font-sans text-muted-gray text-base leading-relaxed mb-8">
+            <p className="font-sans text-muted-gray dark:text-slate-300 text-base leading-relaxed mb-8">
               Book pickup easily and get professionally cleaned clothes delivered back to your doorstep. Our localized routing engines allocate Patna's nearest logistics coordinator instantly.
             </p>
-
+ 
             {/* Premium Delivery workflow visual diagram */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-100 bg-slate-100 mb-8 aspect-[16/10]">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-100 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 mb-8 aspect-[16/10]">
               <img
                 src={deliveryImage}
                 alt="Pinkcollars Premium Delivery Courier"
@@ -119,34 +119,34 @@ export default function PickupExperience() {
                 </span>
               </div>
             </div>
-
+ 
             {/* Quick interactive bullet points */}
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full bg-pink-100 text-primary-pink flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-5 h-5 rounded-full bg-pink-100 dark:bg-pink-950/25 text-primary-pink flex items-center justify-center shrink-0 mt-0.5">
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-deep-navy leading-snug">GPS-Tracked Couriers</h4>
-                  <p className="text-xs text-muted-gray">Direct geo-fencing for real time Patna dispatches.</p>
+                  <h4 className="text-sm font-bold text-deep-navy dark:text-slate-100 leading-snug">GPS-Tracked Couriers</h4>
+                  <p className="text-xs text-muted-gray dark:text-slate-400">Direct geo-fencing for real time Patna dispatches.</p>
                 </div>
               </div>
-
+ 
               <div className="flex items-start gap-3">
-                <div className="w-5 h-5 rounded-full bg-pink-100 text-primary-pink flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-5 h-5 rounded-full bg-pink-100 dark:bg-pink-950/25 text-primary-pink flex items-center justify-center shrink-0 mt-0.5">
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-deep-navy leading-snug">Dirtproof Hanger Boxes</h4>
-                  <p className="text-xs text-muted-gray">Dustproof packaging wraps protect linen crispness.</p>
+                  <h4 className="text-sm font-bold text-deep-navy dark:text-slate-100 leading-snug">Dirtproof Hanger Boxes</h4>
+                  <p className="text-xs text-muted-gray dark:text-slate-400">Dustproof packaging wraps protect linen crispness.</p>
                 </div>
               </div>
             </div>
           </div>
-
+ 
           {/* Core Interactive Appointment Form column (7 cols) */}
           <div className="lg:col-span-7 order-1 lg:order-2">
-            <div id="booking-card" className="bg-slate-50 border border-slate-100 shadow-xl rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+            <div id="booking-card" className="bg-slate-50 dark:bg-dark-card border border-slate-100 dark:border-white/5 shadow-xl rounded-3xl p-6 sm:p-10 relative overflow-hidden transition-colors duration-300">
               
               {/* Card top banner */}
               <div className="absolute top-0 left-0 w-full h-[6px] bg-gradient-to-r from-primary-pink via-indigo-400 to-emerald-400" />
@@ -160,22 +160,22 @@ export default function PickupExperience() {
                     transition={{ duration: 0.3 }}
                   >
                     <div className="mb-8">
-                      <h3 className="font-display font-black text-2xl text-deep-navy mb-1 flex items-center gap-2">
+                      <h3 className="font-display font-black text-2xl text-deep-navy dark:text-[#F8FAFC] mb-1 flex items-center gap-2">
                         <Calendar className="w-6 h-6 text-primary-pink" />
                         Schedule Your Pickup
                       </h3>
-                      <p className="text-xs text-muted-gray font-sans">
+                      <p className="text-xs text-muted-gray dark:text-slate-400 font-sans">
                         Provide your details below to dispatch Patna's professional doorstep laundry couriers.
                       </p>
                     </div>
-
+ 
                     <form onSubmit={handleFormSubmit} className="space-y-5">
                       
                       {/* Name & Phone details (Grid) */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="space-y-1.5">
-                          <label className="text-xs font-bold text-deep-navy block flex items-center gap-1">
-                            <User className="w-3.5 h-3.5 text-muted-gray" />
+                          <label className="text-xs font-bold text-deep-navy dark:text-slate-200 block flex items-center gap-1">
+                            <User className="w-3.5 h-3.5 text-muted-gray dark:text-slate-400" />
                             Full Name <span className="text-primary-pink">*</span>
                           </label>
                           <input
@@ -185,13 +185,13 @@ export default function PickupExperience() {
                             placeholder="e.g. Priyanshu Ranjan"
                             value={formData.fullName}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-deep-navy text-sm font-medium focus:border-primary-pink focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-deep-navy dark:text-slate-100 text-sm font-medium focus:border-primary-pink focus:outline-none transition-colors"
                           />
                         </div>
-
+ 
                         <div className="space-y-1.5">
-                          <label className="text-xs font-bold text-deep-navy block flex items-center gap-1">
-                            <Smartphone className="w-3.5 h-3.5 text-muted-gray" />
+                          <label className="text-xs font-bold text-deep-navy dark:text-slate-200 block flex items-center gap-1">
+                            <Smartphone className="w-3.5 h-3.5 text-muted-gray dark:text-slate-400" />
                             Phone Number <span className="text-primary-pink">*</span>
                           </label>
                           <input
@@ -201,35 +201,35 @@ export default function PickupExperience() {
                             placeholder="e.g. +91 9XXXX XXXXX"
                             value={formData.phone}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-deep-navy text-sm font-medium focus:border-primary-pink focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-deep-navy dark:text-slate-100 text-sm font-medium focus:border-primary-pink focus:outline-none transition-colors"
                           />
                         </div>
                       </div>
-
+ 
                       {/* Service Selector */}
                       <div className="space-y-1.5">
-                        <label className="text-xs font-bold text-deep-navy block">
+                        <label className="text-xs font-bold text-deep-navy dark:text-slate-200 block">
                           Core Service Required <span className="text-primary-pink">*</span>
                         </label>
                         <select
                           name="serviceType"
                           value={formData.serviceType}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-deep-navy text-sm font-medium focus:border-primary-pink focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-deep-navy dark:text-slate-100 text-sm font-medium focus:border-primary-pink focus:outline-none transition-colors"
                         >
                           {servicesList.map((srv) => (
-                            <option key={srv} value={srv}>
+                            <option key={srv} value={srv} className="dark:bg-slate-900">
                               {srv}
                             </option>
                           ))}
                         </select>
                       </div>
-
+ 
                       {/* Date & Time slot selectors (Grid) */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="space-y-1.5">
-                          <label className="text-xs font-bold text-deep-navy block flex items-center gap-1">
-                            <Calendar className="w-3.5 h-3.5 text-muted-gray" />
+                          <label className="text-xs font-bold text-deep-navy dark:text-slate-200 block flex items-center gap-1">
+                            <Calendar className="w-3.5 h-3.5 text-muted-gray dark:text-slate-400" />
                             Preferred Pickup Date <span className="text-primary-pink">*</span>
                           </label>
                           <input
@@ -238,34 +238,34 @@ export default function PickupExperience() {
                             required
                             value={formData.pickupDate}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-deep-navy text-sm font-medium focus:border-primary-pink focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-deep-navy dark:text-slate-100 text-sm font-medium focus:border-primary-pink focus:outline-none transition-colors"
                           />
                         </div>
-
+ 
                         <div className="space-y-1.5">
-                          <label className="text-xs font-bold text-deep-navy block flex items-center gap-1">
-                            <Clock className="w-3.5 h-3.5 text-muted-gray" />
+                          <label className="text-xs font-bold text-deep-navy dark:text-slate-200 block flex items-center gap-1">
+                            <Clock className="w-3.5 h-3.5 text-muted-gray dark:text-slate-400" />
                             Preferred Time Slot <span className="text-primary-pink">*</span>
                           </label>
                           <select
                             name="pickupTime"
                             value={formData.pickupTime}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-deep-navy text-sm font-medium focus:border-primary-pink focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-deep-navy dark:text-slate-100 text-sm font-medium focus:border-primary-pink focus:outline-none transition-colors"
                           >
                             {timeSlots.map((slot) => (
-                              <option key={slot} value={slot}>
+                              <option key={slot} value={slot} className="dark:bg-slate-900">
                                 {slot}
                               </option>
                             ))}
                           </select>
                         </div>
                       </div>
-
+ 
                       {/* Address detail */}
                       <div className="space-y-1.5">
-                        <label className="text-xs font-bold text-deep-navy block flex items-center gap-1">
-                          <MapPin className="w-3.5 h-3.5 text-muted-gray" />
+                        <label className="text-xs font-bold text-deep-navy dark:text-slate-200 block flex items-center gap-1">
+                          <MapPin className="w-3.5 h-3.5 text-muted-gray dark:text-slate-400" />
                           Patna Doorstep Address <span className="text-primary-pink">*</span>
                         </label>
                         <input
@@ -275,13 +275,13 @@ export default function PickupExperience() {
                           placeholder="Apartment, Street Name, Landmark, Patna"
                           value={formData.address}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-deep-navy text-sm font-medium focus:border-primary-pink focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-deep-navy dark:text-slate-100 text-sm font-medium focus:border-primary-pink focus:outline-none transition-colors"
                         />
                       </div>
-
+ 
                       {/* Custom instructions */}
                       <div className="space-y-1.5">
-                        <label className="text-xs font-bold text-deep-navy block">
+                        <label className="text-xs font-bold text-deep-navy dark:text-slate-200 block">
                           Specific instructions (e.g. delicate buttons, mild starch)
                         </label>
                         <textarea
@@ -290,10 +290,10 @@ export default function PickupExperience() {
                           value={formData.notes || ""}
                           onChange={handleInputChange}
                           placeholder="Any explicit fabric sorting guidelines..."
-                          className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-deep-navy text-sm font-medium focus:border-primary-pink focus:outline-none transition-colors resize-none"
+                          className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-deep-navy dark:text-slate-100 text-sm font-medium focus:border-primary-pink focus:outline-none transition-colors resize-none mb-1"
                         />
                       </div>
-
+ 
                       {/* Submit form button */}
                       <button
                         type="submit"
@@ -302,7 +302,7 @@ export default function PickupExperience() {
                         <Sparkles className="w-4 h-4" />
                         Book Doorstep Collection
                       </button>
-
+ 
                     </form>
                   </motion.div>
                 ) : (
@@ -316,36 +316,36 @@ export default function PickupExperience() {
                     <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-500 mx-auto mb-6">
                       <PackageCheck className="w-8 h-8" />
                     </div>
-
-                    <h3 className="font-display font-black text-2xl text-deep-navy mb-2">
+ 
+                    <h3 className="font-display font-black text-2xl text-deep-navy dark:text-[#F8FAFC] mb-2">
                       Booking Initialized!
                     </h3>
-                    <p className="font-sans text-xs text-muted-gray max-w-sm mx-auto mb-8">
-                      Thank you, <strong className="text-deep-navy">{formData.fullName}</strong>. Your pickup request has been processed inside our local database.
+                    <p className="font-sans text-xs text-muted-gray dark:text-slate-400 max-w-sm mx-auto mb-8">
+                      Thank you, <strong className="text-deep-navy dark:text-slate-250">{formData.fullName}</strong>. Your pickup request has been processed inside our local database.
                     </p>
-
+ 
                     {/* Booking specifications sheet */}
-                    <div className="bg-white rounded-2xl p-5 border border-slate-100 text-left space-y-3 mb-8 max-w-sm mx-auto">
-                      <div className="flex justify-between border-b pb-2 text-xs">
-                        <span className="text-muted-gray font-sans">Service:</span>
-                        <strong className="text-deep-navy font-sans">{formData.serviceType}</strong>
+                    <div className="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-100 dark:border-slate-800 text-left space-y-3 mb-8 max-w-sm mx-auto shadow-sm">
+                      <div className="flex justify-between border-b dark:border-white/5 pb-2 text-xs">
+                        <span className="text-muted-gray dark:text-slate-400 font-sans">Service:</span>
+                        <strong className="text-deep-navy dark:text-slate-100 font-sans">{formData.serviceType}</strong>
                       </div>
-                      <div className="flex justify-between border-b pb-2 text-xs">
-                        <span className="text-muted-gray font-sans">Date:</span>
-                        <strong className="text-deep-navy font-mono">{formData.pickupDate}</strong>
+                      <div className="flex justify-between border-b dark:border-white/5 pb-2 text-xs">
+                        <span className="text-muted-gray dark:text-slate-400 font-sans">Date:</span>
+                        <strong className="text-deep-navy dark:text-slate-150 font-mono">{formData.pickupDate}</strong>
                       </div>
-                      <div className="flex justify-between border-b pb-2 text-xs">
-                        <span className="text-muted-gray font-sans">Time Slot:</span>
-                        <strong className="text-deep-navy font-mono text-right">{formData.pickupTime.split(" ")[0]} {formData.pickupTime.split(" ")[1]}</strong>
+                      <div className="flex justify-between border-b dark:border-white/5 pb-2 text-xs">
+                        <span className="text-muted-gray dark:text-slate-400 font-sans">Time/Slot:</span>
+                        <strong className="text-deep-navy dark:text-slate-150 font-mono text-right">{formData.pickupTime.split(" ")[0]} {formData.pickupTime.split(" ")[1]}</strong>
                       </div>
                       <div className="flex justify-between text-xs">
-                        <span className="text-muted-gray font-sans">Address:</span>
-                        <strong className="text-deep-navy font-sans truncate max-w-[180px]" title={formData.address}>
+                        <span className="text-muted-gray dark:text-slate-400 font-sans">Address:</span>
+                        <strong className="text-deep-navy dark:text-slate-100 font-sans truncate max-w-[180px]" title={formData.address}>
                           {formData.address}
                         </strong>
                       </div>
                     </div>
-
+ 
                     {/* Trigger direct WhatsApp dispatcher */}
                     <div className="space-y-3.5 max-w-sm mx-auto">
                       <button
@@ -353,9 +353,9 @@ export default function PickupExperience() {
                         className="w-full py-4 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm shadow-[0_8px_24px_rgba(37,211,102,0.3)] hover:shadow-[0_12px_28px_rgba(37,211,102,0.45)] active:scale-99 transition-all cursor-pointer flex justify-center items-center gap-2.5"
                       >
                         <WhatsAppIcon className="w-5 h-5 text-white" />
-                        Confirm & Dispatch via WhatsApp
+                        Confirm & Dispatch on WhatsApp
                       </button>
-
+ 
                       <button
                         onClick={() => {
                           setIsSubmitted(false);
@@ -374,11 +374,11 @@ export default function PickupExperience() {
                         Book another appointment
                       </button>
                     </div>
-
+ 
                   </motion.div>
                 )}
               </AnimatePresence>
-
+ 
             </div>
           </div>
 

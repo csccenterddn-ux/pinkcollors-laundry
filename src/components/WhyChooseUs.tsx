@@ -72,7 +72,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section id="why-us" className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+    <section id="why-us" className="py-24 bg-gradient-to-b from-slate-50 to-white dark:from-dark-surface dark:to-dark-bg relative overflow-hidden transition-colors duration-300">
       {/* Visual background lights */}
       <div className="absolute top-[10%] left-[-15%] w-[450px] h-[450px] rounded-full bg-primary-pink/5 blur-[120px]" />
       
@@ -80,18 +80,18 @@ export default function WhyChooseUs() {
         
         {/* Headliner */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/25 border border-emerald-100 dark:border-emerald-900/35 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Why Patna Chooses Pinkcollars</span>
           </div>
-          <h2 className="font-display font-black text-3xl sm:text-4.5xl text-deep-navy leading-tight mb-4">
+          <h2 className="font-display font-black text-3xl sm:text-4.5xl text-deep-navy dark:text-[#F8FAFC] leading-tight mb-4">
             Designed for Modern Lifestyles
           </h2>
-          <p className="font-sans text-muted-gray text-base max-w-xl mx-auto">
+          <p className="font-sans text-muted-gray dark:text-[#CBD5E1] text-base max-w-xl mx-auto">
             Traditional laundromats damage clothes with hard tap-water and heavy chemicals. Pinkcollars implements world-class science to give your favorite clothes a lifespan boost.
           </p>
         </div>
-
+ 
         {/* Features Grid layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feat, idx) => {
@@ -103,25 +103,25 @@ export default function WhyChooseUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="bg-white rounded-2xl p-6 border border-slate-100 hover:border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white dark:bg-dark-card rounded-2xl p-6 border border-slate-100 dark:border-white/5 hover:border-slate-200 dark:hover:border-white/10 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   {/* Icon Frame with pop transition */}
-                  <div className={`w-11 h-11 rounded-xl ${feat.bgColor} ${feat.color} flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300`}>
+                  <div className={`w-11 h-11 rounded-xl ${feat.bgColor} dark:bg-indigo-950/30 ${feat.color} flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300`}>
                     <IconComp className="w-5.5 h-5.5" />
                   </div>
                   
-                  <h3 className="font-display font-bold text-sm sm:text-base text-deep-navy mb-2 leading-snug">
+                  <h3 className="font-display font-bold text-sm sm:text-base text-deep-navy dark:text-slate-100 mb-2 leading-snug">
                     {feat.title}
                   </h3>
                   
-                  <p className="font-sans text-xs text-muted-gray leading-relaxed">
+                  <p className="font-sans text-xs text-muted-gray dark:text-slate-400 leading-relaxed">
                     {feat.description}
                   </p>
                 </div>
-
+ 
                 {/* Micro interactivity details */}
-                <div className="pt-4 border-t border-slate-50 mt-4 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="pt-4 border-t border-slate-50 dark:border-white/5 mt-4 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="text-[10px] font-mono text-primary-pink uppercase font-extrabold tracking-wider">
                     Premium Standard
                   </span>
@@ -131,7 +131,7 @@ export default function WhyChooseUs() {
             );
           })}
         </div>
-
+ 
       </div>
     </section>
   );

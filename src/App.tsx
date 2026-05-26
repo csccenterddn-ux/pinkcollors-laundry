@@ -88,7 +88,7 @@ export default function App() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.45, ease: "easeOut" }}
-          className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 overflow-x-hidden selection:bg-primary-pink/30 selection:text-deep-navy transition-colors duration-300"
+          className="min-h-screen bg-slate-50 dark:bg-dark-bg text-slate-800 dark:text-slate-100 overflow-x-hidden selection:bg-primary-pink/30 selection:text-deep-navy transition-colors duration-300"
         >
           {/* Sticky glassmorphic navbar with premium dark mode support */}
           <Header 

@@ -221,7 +221,7 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="py-24 bg-white relative overflow-hidden">
+    <section id="services" className="py-24 bg-white dark:bg-dark-bg relative overflow-hidden transition-colors duration-300">
       {/* Visual glowing bubbles */}
       <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] rounded-full bg-primary-pink/5 blur-[120px]" />
       
@@ -233,21 +233,21 @@ export default function Services() {
             <Sparkles className="w-3.5 h-3.5" />
             <span>Curated Fabric Solutions</span>
           </div>
-          <h2 className="font-display font-black text-3xl sm:text-4.5xl text-deep-navy leading-tight mb-4">
+          <h2 className="font-display font-black text-3xl sm:text-4.5xl text-deep-navy dark:text-[#F8FAFC] leading-tight mb-4">
             Elite Care & Restoration
           </h2>
-          <p className="font-sans text-muted-gray text-base max-w-xl mx-auto">
+          <p className="font-sans text-muted-gray dark:text-[#CBD5E1] text-base max-w-xl mx-auto">
             Choose from dry cleaning, premium sorting washes, and custom pressing options managed by professional laundry artisans.
           </p>
-
+ 
           {/* Sub menu controls */}
-          <div className="flex bg-slate-100 p-1.5 rounded-2xl w-fit mx-auto mt-8 relative">
+          <div className="flex bg-slate-100 dark:bg-slate-900 border dark:border-white/5 p-1.5 rounded-2xl w-fit mx-auto mt-8 relative">
             <button
               onClick={() => setActiveTab("standard")}
               className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 cursor-pointer ${
                 activeTab === "standard"
-                  ? "bg-white text-deep-navy shadow"
-                  : "text-muted-gray hover:text-deep-navy"
+                  ? "bg-white dark:bg-slate-800 text-deep-navy dark:text-slate-100 shadow"
+                  : "text-muted-gray dark:text-slate-400 hover:text-deep-navy dark:hover:text-slate-250"
               }`}
             >
               <Shirt className="w-4 h-4" />
@@ -257,8 +257,8 @@ export default function Services() {
               onClick={() => setActiveTab("calculator")}
               className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 cursor-pointer ${
                 activeTab === "calculator"
-                  ? "bg-white text-deep-navy shadow"
-                  : "text-muted-gray hover:text-deep-navy"
+                  ? "bg-white dark:bg-slate-800 text-deep-navy dark:text-slate-100 shadow"
+                  : "text-muted-gray dark:text-slate-400 hover:text-deep-navy dark:hover:text-slate-250"
               }`}
             >
               <Calculator className="w-4 h-4" />
@@ -266,7 +266,7 @@ export default function Services() {
             </button>
           </div>
         </div>
-
+ 
         {/* Tab content 1: Service Cards */}
         {activeTab === "standard" && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -286,39 +286,39 @@ export default function Services() {
                   hover: { type: "spring", stiffness: 400, damping: 25 },
                   default: { type: "spring", stiffness: 120, damping: 16, delay: index * 0.04 }
                 }}
-                className="group relative bg-slate-50 hover:bg-white rounded-3xl p-6 border border-slate-100 flex flex-col justify-between overflow-hidden cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-300"
+                className="group relative bg-slate-50 dark:bg-dark-card hover:bg-white dark:hover:bg-dark-card/90 rounded-3xl p-6 border border-slate-100/80 dark:border-white/5 flex flex-col justify-between overflow-hidden cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-300"
               >
                 {/* Neon back glow */}
                 <div className="absolute top-[-50%] right-[-50%] w-[150px] h-[150px] rounded-full bg-primary-pink/0 group-hover:bg-primary-pink/5 blur-[35px] transition-all duration-500 pointer-events-none" />
-
+ 
                 <div>
                   {/* Premium Minimalist Service Icon Container */}
-                  <div className="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-200/50 group-hover:bg-pink-50/50 group-hover:border-primary-pink/25 flex items-center justify-center mb-6 shadow-[0_4px_12px_rgba(15,23,42,0.01)] group-hover:shadow-[0_8px_24px_rgba(244,63,94,0.05)] transition-all duration-350 group-hover:scale-110">
-                    <div className="text-deep-navy/85 group-hover:text-primary-pink transition-colors duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/50 dark:border-white/5 group-hover:bg-pink-50/50 dark:group-hover:bg-pink-950/20 group-hover:border-primary-pink/25 flex items-center justify-center mb-6 shadow-[0_4px_12px_rgba(15,23,42,0.01)] group-hover:shadow-[0_8px_24px_rgba(244,63,94,0.05)] transition-all duration-350 group-hover:scale-110">
+                    <div className="text-deep-navy/85 dark:text-slate-200 group-hover:text-primary-pink transition-colors duration-300">
                       {getServiceIcon(service.iconName)}
                     </div>
                   </div>
-
+ 
                   <span className="font-mono text-[10px] text-primary-pink uppercase font-extrabold tracking-widest block mb-1">
                     {service.priceDetail}
                   </span>
                   
-                  <h3 className="font-display font-black text-lg sm:text-xl text-deep-navy mb-2.5">
+                  <h3 className="font-display font-black text-lg sm:text-xl text-deep-navy dark:text-slate-100 mb-2.5">
                     {service.name}
                   </h3>
-
-                  <p className="font-sans text-xs sm:text-sm text-muted-gray leading-relaxed mb-5">
+ 
+                  <p className="font-sans text-xs sm:text-sm text-muted-gray dark:text-slate-400 leading-relaxed mb-5">
                     {service.description}
                   </p>
                 </div>
-
+ 
                 {/* Features Checklist */}
                 <div>
-                  <div className="pt-6 border-t border-slate-200/50 space-y-2.5 mb-2">
+                  <div className="pt-6 border-t border-slate-200/50 dark:border-white/5 space-y-2.5 mb-2">
                     {service.features.map((feature, fIdx) => (
                       <div key={fIdx} className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-primary-pink shrink-0" />
-                        <span className="font-sans text-xs text-deep-navy/80 font-medium">
+                        <span className="font-sans text-xs text-deep-navy/80 dark:text-slate-300 font-medium">
                           {feature}
                         </span>
                       </div>
@@ -329,106 +329,106 @@ export default function Services() {
             ))}
           </div>
         )}
-
+ 
         {/* Tab content 2: Pricing Estimator Widget */}
         {activeTab === "calculator" && (
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto bg-slate-50 rounded-3xl border border-slate-100 p-6 sm:p-10 shadow-xl"
+            className="max-w-4xl mx-auto bg-slate-50 dark:bg-dark-surface rounded-3xl border border-slate-100 dark:border-white/5 p-6 sm:p-10 shadow-xl transition-colors duration-300"
           >
             <div className="flex flex-col lg:flex-row gap-8">
               
               {/* Quantities Editor column */}
               <div className="flex-1 space-y-6">
-                <div className="flex items-center justify-between border-b border-slate-200 pb-4">
-                  <span className="font-display font-extrabold text-base text-deep-navy uppercase tracking-wider">
+                <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/5 pb-4">
+                  <span className="font-display font-extrabold text-base text-deep-navy dark:text-[#F8FAFC] uppercase tracking-wider">
                     Select Your Items
                   </span>
-                  <p className="text-xs text-muted-gray">Pricing estimate (Standard Patna rates)</p>
+                  <p className="text-xs text-muted-gray dark:text-[#94A3B8]">Pricing estimate (Standard Patna rates)</p>
                 </div>
-
+ 
                 <div className="space-y-4">
                   {pricingItems.map((item) => (
                     <div
                       key={item.name}
-                      className="bg-white p-4 rounded-2xl border border-slate-200/50 hover:border-slate-300 transition-all shadow-sm"
+                      className="bg-white dark:bg-dark-card p-4 rounded-2xl border border-slate-200/50 dark:border-white/5 hover:border-slate-300 dark:hover:border-white/10 transition-all shadow-sm"
                     >
-                      <div className="font-sans font-bold text-sm text-deep-navy mb-3">
+                      <div className="font-sans font-bold text-sm text-deep-navy dark:text-[#F8FAFC] mb-3">
                         {item.name}
                       </div>
                       
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         {/* Wet Wash controls */}
-                        <div className="flex items-center justify-between p-2 rounded-xl bg-slate-50 border border-slate-100">
+                        <div className="flex items-center justify-between p-2 rounded-xl bg-slate-50 dark:bg-dark-surface border border-slate-100 dark:border-white/5">
                           <div className="flex flex-col">
-                            <span className="text-[10px] font-bold text-deep-navy/80">Wet Wash</span>
+                            <span className="text-[10px] font-bold text-deep-navy/80 dark:text-slate-300">Wet Wash</span>
                             <span className="text-[10px] text-primary-pink font-semibold">₹{item.wetWash}/pc</span>
                           </div>
                           <div className="flex items-center gap-2">
                             <button
                               onClick={() => updateQuantity(item.name, "wetWash", -1)}
-                              className="w-6 h-6 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              className="w-6 h-6 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
                             >
                               <Minus className="w-3.5 h-3.5" />
                             </button>
-                            <span className="w-6 text-center font-mono text-xs font-bold text-deep-navy">
+                            <span className="w-6 text-center font-mono text-xs font-bold text-deep-navy dark:text-slate-200">
                               {quantities[item.name].wetWash}
                             </span>
                             <button
                               onClick={() => updateQuantity(item.name, "wetWash", 1)}
-                              className="w-6 h-6 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              className="w-6 h-6 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
                             >
                               <Plus className="w-3.5 h-3.5" />
                             </button>
                           </div>
                         </div>
-
+ 
                         {/* Dry Clean controls */}
-                        <div className="flex items-center justify-between p-2 rounded-xl bg-slate-50 border border-slate-100">
+                        <div className="flex items-center justify-between p-2 rounded-xl bg-slate-50 dark:bg-dark-surface border border-slate-100 dark:border-white/5">
                           <div className="flex flex-col">
-                            <span className="text-[10px] font-bold text-deep-navy/80">Dry Clean</span>
+                            <span className="text-[10px] font-bold text-deep-navy/80 dark:text-slate-300">Dry Clean</span>
                             <span className="text-[10px] text-primary-pink font-semibold">₹{item.dryClean}/pc</span>
                           </div>
                           <div className="flex items-center gap-2">
                             <button
                               onClick={() => updateQuantity(item.name, "dryClean", -1)}
-                              className="w-6 h-6 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              className="w-6 h-6 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
                             >
                               <Minus className="w-3.5 h-3.5" />
                             </button>
-                            <span className="w-6 text-center font-mono text-xs font-bold text-deep-navy">
+                            <span className="w-6 text-center font-mono text-xs font-bold text-deep-navy dark:text-slate-200">
                               {quantities[item.name].dryClean}
                             </span>
                             <button
                               onClick={() => updateQuantity(item.name, "dryClean", 1)}
-                              className="w-6 h-6 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              className="w-6 h-6 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
                             >
                               <Plus className="w-3.5 h-3.5" />
                             </button>
                           </div>
                         </div>
-
+ 
                         {/* Iron controls */}
-                        <div className="flex items-center justify-between p-2 rounded-xl bg-slate-50 border border-slate-100">
+                        <div className="flex items-center justify-between p-2 rounded-xl bg-slate-50 dark:bg-dark-surface border border-slate-100 dark:border-white/5">
                           <div className="flex flex-col">
-                            <span className="text-[10px] font-bold text-deep-navy/80">Steam Iron</span>
+                            <span className="text-[10px] font-bold text-deep-navy/80 dark:text-slate-300">Steam Iron</span>
                             <span className="text-[10px] text-primary-pink font-semibold">₹{item.iron}/pc</span>
                           </div>
                           <div className="flex items-center gap-2">
                             <button
                               onClick={() => updateQuantity(item.name, "iron", -1)}
-                              className="w-6 h-6 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              className="w-6 h-6 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
                             >
                               <Minus className="w-3.5 h-3.5" />
                             </button>
-                            <span className="w-6 text-center font-mono text-xs font-bold text-deep-navy">
+                            <span className="w-6 text-center font-mono text-xs font-bold text-deep-navy dark:text-slate-200">
                               {quantities[item.name].iron}
                             </span>
                             <button
                               onClick={() => updateQuantity(item.name, "iron", 1)}
-                              className="w-6 h-6 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              className="w-6 h-6 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
                             >
                               <Plus className="w-3.5 h-3.5" />
                             </button>
@@ -439,9 +439,9 @@ export default function Services() {
                   ))}
                 </div>
               </div>
-
+ 
               {/* Total Calculation panel (Right layout) */}
-              <div className="w-full lg:w-80 bg-deep-navy text-white rounded-2xl p-6 flex flex-col justify-between border border-slate-800 shadow-xl self-start">
+              <div className="w-full lg:w-80 bg-deep-navy dark:bg-dark-card text-white rounded-2xl p-6 flex flex-col justify-between border border-slate-800 dark:border-white/5 shadow-xl self-start">
                 <div>
                   <h4 className="font-display font-semibold text-sm uppercase tracking-wider text-primary-pink mb-4">
                     Order Calculation

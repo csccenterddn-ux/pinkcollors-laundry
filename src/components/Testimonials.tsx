@@ -161,7 +161,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="py-24 bg-slate-50 relative overflow-hidden">
+    <section id="testimonials" className="py-24 bg-slate-50 dark:bg-dark-bg relative overflow-hidden transition-colors duration-300">
       {/* Glow bubble background */}
       <div className="absolute top-[20%] left-[-10%] w-[350px] h-[350px] rounded-full bg-primary-pink/5 blur-[120px]" />
       
@@ -169,66 +169,66 @@ export default function Testimonials() {
         
         {/* Header Titles */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Check className="w-3.5 h-3.5 text-emerald-600 stroke-[3]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 stroke-[3]" />
             <span>100% Google Verified</span>
           </div>
-          <h2 className="font-display font-black text-3.5xl sm:text-4.5xl text-deep-navy leading-tight mb-4">
+          <h2 className="font-display font-black text-3.5xl sm:text-4.5xl text-deep-navy dark:text-[#F8FAFC] leading-tight mb-4">
             Trusted By Patna Families
           </h2>
           
           <div className="flex flex-wrap items-center justify-center gap-3.5 mt-4 text-sm font-sans mb-5">
-            <div className="flex items-center gap-1.5 bg-white border border-slate-200/80 px-3 py-1.5 rounded-full shadow-xs">
+            <div className="flex items-center gap-1.5 bg-white dark:bg-dark-card border border-slate-200/80 dark:border-white/5 px-3 py-1.5 rounded-full shadow-xs">
               <GoogleColorIcon />
-              <span className="font-bold text-deep-navy">4.5 Rating</span>
+              <span className="font-bold text-deep-navy dark:text-[#F8FAFC]">4.5 Rating</span>
             </div>
-            <div className="text-slate-200 font-extralight hidden sm:inline">|</div>
-            <span className="text-muted-gray font-medium">380+ Verified Reviews</span>
-            <div className="text-slate-200 font-extralight hidden sm:inline">|</div>
-            <div className="flex items-center gap-1 text-emerald-600 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-500 animate-pulse" />
+            <div className="text-slate-200 dark:text-slate-800 font-extralight hidden sm:inline">|</div>
+            <span className="text-muted-gray dark:text-slate-300 font-medium">380+ Verified Reviews</span>
+            <div className="text-slate-200 dark:text-slate-800 font-extralight hidden sm:inline">|</div>
+            <div className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/30 px-2.5 py-1 rounded-full">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-500 dark:text-emerald-400 animate-pulse" />
               <span className="text-xs font-semibold">Google Verified</span>
             </div>
           </div>
-
-          <p className="font-sans text-muted-gray text-base max-w-xl mx-auto mb-6">
+ 
+          <p className="font-sans text-muted-gray dark:text-slate-300 text-base max-w-xl mx-auto mb-6">
             We deliver crisp, immaculate garments to premium households across Patna. Read why families trust our specialized pickup executives.
           </p>
-
+ 
           <a
             href="https://google.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs font-bold bg-white text-deep-navy border border-slate-200 hover:border-slate-350 hover:bg-slate-50 transition-all duration-200 px-4 py-2.5 rounded-xl shadow-xs"
+            className="inline-flex items-center gap-2 text-xs font-bold bg-white dark:bg-dark-surface text-deep-navy dark:text-slate-205 border border-slate-200 dark:border-slate-800 hover:border-slate-350 dark:hover:bg-slate-800 hover:bg-slate-50 transition-all duration-200 px-4 py-2.5 rounded-xl shadow-xs"
           >
             <GoogleColorIcon />
             <span>View Google Reviews</span>
           </a>
         </div>
-
+ 
         {/* Google Trust Bar */}
-        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-4 sm:p-5 max-w-4xl mx-auto mb-14 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="bg-white dark:bg-dark-card rounded-2xl border border-slate-100 dark:border-white/5 shadow-sm p-4 sm:p-5 max-w-4xl mx-auto mb-14 flex flex-col sm:flex-row items-center justify-between gap-4 transition-colors duration-300">
           <div className="flex items-center gap-3.5 text-center sm:text-left flex-col sm:flex-row">
-            <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center border border-slate-100 shadow-xs shrink-0">
+            <div className="w-10 h-10 rounded-full bg-slate-50 dark:bg-dark-surface flex items-center justify-center border border-slate-100 dark:border-white/5 shadow-xs shrink-0">
               <GoogleColorIcon />
             </div>
             <div>
               <div className="flex items-center gap-1 justify-center sm:justify-start">
-                <span className="font-display font-bold text-lg text-deep-navy leading-none">4.5</span>
-                <span className="text-xs text-slate-400">/ 5 Google Rating</span>
+                <span className="font-display font-bold text-lg text-deep-navy dark:text-slate-100 leading-none">4.5</span>
+                <span className="text-xs text-slate-400 dark:text-slate-500">/ 5 Google Rating</span>
                 <div className="flex gap-0.5 ml-1.5">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
               </div>
-              <p className="text-xs text-muted-gray mt-0.5">Verified Local Resident Feedback</p>
+              <p className="text-xs text-muted-gray dark:text-slate-400 mt-0.5">Verified Local Resident Feedback</p>
             </div>
           </div>
-
+ 
           <div className="flex items-center gap-3 shrink-0">
-            <div className="flex items-center gap-1.5 text-xs font-semibold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
-              <Check className="w-3 h-3 text-emerald-600 stroke-[3]" />
+            <div className="flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/20 px-3 py-1 rounded-full border border-emerald-100 dark:border-emerald-900/30">
+              <Check className="w-3 h-3 text-emerald-600 dark:text-emerald-400 stroke-[3]" />
               <span>100% Genuine</span>
             </div>
             <button 
@@ -241,7 +241,7 @@ export default function Testimonials() {
             </button>
           </div>
         </div>
-
+ 
         {/* Testimonials Slider */}
         <div 
           id="reviews-carousel"
@@ -256,7 +256,7 @@ export default function Testimonials() {
           <div className="absolute top-1/2 -translate-y-1/2 left-0 z-20 hidden sm:block">
             <button
               onClick={handlePrev}
-              className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:bg-slate-50 text-deep-navy shadow-md hover:shadow-lg transition-all ml-1 duration-200"
+              className="w-10 h-10 rounded-full bg-white dark:bg-dark-surface border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-800 text-deep-navy dark:text-slate-100 shadow-md hover:shadow-lg transition-all ml-1 duration-200"
               aria-label="Previous Review"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -266,13 +266,13 @@ export default function Testimonials() {
           <div className="absolute top-1/2 -translate-y-1/2 right-0 z-20 hidden sm:block">
             <button
               onClick={handleNext}
-              className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:bg-slate-50 text-deep-navy shadow-md hover:shadow-lg transition-all mr-1 duration-200"
+              className="w-10 h-10 rounded-full bg-white dark:bg-dark-surface border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-800 text-deep-navy dark:text-slate-100 shadow-md hover:shadow-lg transition-all mr-1 duration-200"
               aria-label="Next Review"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
-
+ 
           {/* Carousel Track wrapper */}
           <div className="overflow-hidden sm:mx-12">
             <div 
@@ -287,7 +287,7 @@ export default function Testimonials() {
                   className="flex-none px-3"
                   style={{ width: `${100 / visibleCount}%` }}
                 >
-                  <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-150 shadow-xs hover:shadow-md hover:translate-y-[-2px] transition-all duration-300 relative h-full flex flex-col justify-between group">
+                  <div className="bg-white dark:bg-dark-card rounded-3xl p-6 sm:p-7 border border-slate-150 dark:border-white/5 shadow-xs hover:shadow-md hover:translate-y-[-2px] transition-all duration-300 relative h-full flex flex-col justify-between group">
                     <div>
                       {/* Rating block */}
                       <div className="flex gap-0.5 mb-3.5">
@@ -297,29 +297,29 @@ export default function Testimonials() {
                       </div>
                       
                       {/* Review text */}
-                      <p className="font-sans text-[13.5px] sm:text-[14px] text-deep-navy/85 leading-relaxed mb-6 italic">
+                      <p className="font-sans text-[13.5px] sm:text-[14px] text-deep-navy/85 dark:text-slate-200 leading-relaxed mb-6 italic">
                         "{rev.text}"
                       </p>
                     </div>
-
+ 
                     {/* Customer Profiling */}
-                    <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-2.5">
+                    <div className="pt-4 border-t border-slate-100 dark:border-white/5 flex items-center justify-between gap-2.5">
                       <div className="flex items-center gap-2.5">
-                        <div className="w-9 h-9 rounded-xl bg-slate-50 flex items-center justify-center text-deep-navy font-bold text-xs tracking-wider border border-slate-200 font-display shrink-0">
+                        <div className="w-9 h-9 rounded-xl bg-slate-50 dark:bg-dark-surface flex items-center justify-center text-deep-navy dark:text-slate-250 font-bold text-xs tracking-wider border border-slate-200 dark:border-white/5 font-display shrink-0">
                           {rev.avatar}
                         </div>
                         <div className="min-w-0">
-                          <h4 className="font-display font-extrabold text-[13.5px] text-deep-navy leading-tight truncate">
+                          <h4 className="font-display font-extrabold text-[13.5px] text-deep-navy dark:text-slate-100 leading-tight truncate">
                             {rev.name}
                           </h4>
-                          <p className="font-sans text-[10px] text-muted-gray leading-none mt-0.5 truncate">
-                            {rev.role} • <span className="font-medium text-slate-500">{rev.location}</span>
+                          <p className="font-sans text-[10px] text-muted-gray dark:text-slate-400 leading-none mt-0.5 truncate">
+                            {rev.role} • <span className="font-medium text-slate-500 dark:text-slate-400">{rev.location}</span>
                           </p>
                         </div>
                       </div>
                       
                       {/* Mini Verified Badge */}
-                      <div className="flex items-center gap-0.5 text-[9px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 px-1.5 py-0.5 rounded shrink-0">
+                      <div className="flex items-center gap-0.5 text-[9px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/40 px-1.5 py-0.5 rounded shrink-0">
                         <Check className="w-2.5 h-2.5 stroke-[3]" />
                         <span>VERIFIED</span>
                       </div>
@@ -329,7 +329,7 @@ export default function Testimonials() {
               ))}
             </div>
           </div>
-
+ 
           {/* Slider Indicators Dots */}
           <div className="flex justify-center gap-1.5 mt-8">
             {[...Array(reviews.length - visibleCount + 1)].map((_, i) => (
@@ -340,14 +340,14 @@ export default function Testimonials() {
                   setCurrentIndex(i);
                 }}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  currentIndex === i ? "w-6 bg-primary-pink" : "w-2 bg-slate-200 hover:bg-slate-350"
+                  currentIndex === i ? "w-6 bg-primary-pink" : "w-2 bg-slate-200 dark:bg-slate-800 hover:bg-slate-350 dark:hover:bg-slate-700"
                 }`}
                 aria-label={`Go to slide ${i + 1}`}
               />
             ))}
           </div>
         </div>
-
+ 
       </div>
     </section>
   );

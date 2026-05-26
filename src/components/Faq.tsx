@@ -77,7 +77,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faq" className="py-24 bg-white relative overflow-hidden">
+    <section id="faq" className="py-24 bg-white dark:bg-dark-bg relative overflow-hidden transition-colors duration-300">
       {/* Decorative background glow bubble */}
       <div className="absolute top-[30%] left-[-10%] w-96 h-96 rounded-full bg-primary-pink/5 blur-[120px]" />
       <div className="absolute bottom-[20%] right-[-10%] w-96 h-96 rounded-full bg-indigo-500/5 blur-[120px]" />
@@ -90,10 +90,10 @@ export default function FaqSection() {
             <Sparkles className="w-3.5 h-3.5" />
             <span>Got Questions?</span>
           </div>
-          <h2 className="font-display font-black text-3xl sm:text-4.5xl text-deep-navy leading-tight mb-4">
+          <h2 className="font-display font-black text-3xl sm:text-4.5xl text-deep-navy dark:text-[#F8FAFC] leading-tight mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="font-sans text-muted-gray text-sm sm:text-base leading-relaxed">
+          <p className="font-sans text-muted-gray dark:text-slate-400 text-sm sm:text-base leading-relaxed">
             Everything you need to know about our premium operations, water-conditioning chemistry, and Patna service areas.
           </p>
         </div>
@@ -115,8 +115,8 @@ export default function FaqSection() {
                 variants={itemVariants}
                 className={`rounded-2xl border transition-all duration-300 ${
                   isOpen
-                    ? "bg-slate-50/80 border-primary-pink/25 shadow-md shadow-primary-pink/5"
-                    : "bg-white border-slate-100 hover:border-slate-200 shadow-sm"
+                    ? "bg-slate-50/80 dark:bg-dark-card border-primary-pink/25 dark:border-primary-pink/30 shadow-md shadow-primary-pink/5"
+                    : "bg-white dark:bg-dark-card/40 border-slate-100 dark:border-white/5 hover:border-slate-200 dark:hover:border-white/10 shadow-sm"
                 }`}
               >
                 <button
@@ -125,14 +125,14 @@ export default function FaqSection() {
                 >
                   <div className="flex items-center gap-3">
                     <HelpCircle className={`w-5 h-5 shrink-0 transition-colors duration-300 ${
-                      isOpen ? "text-primary-pink" : "text-muted-gray group-hover:text-deep-navy"
+                      isOpen ? "text-primary-pink" : "text-muted-gray dark:text-slate-450 group-hover:text-deep-navy dark:group-hover:text-white"
                     }`} />
-                    <span className="font-display font-bold text-sm sm:text-base text-deep-navy transition-colors">
+                    <span className="font-display font-bold text-sm sm:text-base text-deep-navy dark:text-[#F8FAFC] transition-colors group-hover:text-primary-pink dark:group-hover:text-primary-pink">
                       {faq.question}
                     </span>
                   </div>
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 shrink-0 ${
-                    isOpen ? "bg-primary-pink text-white rotate-180" : "bg-slate-100 text-slate-500 group-hover:bg-slate-200"
+                    isOpen ? "bg-primary-pink text-white rotate-180" : "bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 group-hover:bg-slate-200 dark:group-hover:bg-slate-700"
                   }`}>
                     <ChevronDown className="w-4 h-4" />
                   </div>
@@ -147,7 +147,7 @@ export default function FaqSection() {
                       transition={{ duration: 0.25, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 pt-1 text-xs sm:text-sm font-sans text-muted-gray leading-relaxed border-t border-slate-100/50 mt-1">
+                      <div className="px-6 pb-6 pt-1 text-xs sm:text-sm font-sans text-muted-gray dark:text-slate-350 leading-relaxed border-t border-slate-100/50 dark:border-white/5 mt-1">
                         {faq.answer}
                       </div>
                     </motion.div>
@@ -159,11 +159,11 @@ export default function FaqSection() {
         </motion.div>
 
         {/* Support helper CTA */}
-        <div className="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-100 text-center max-w-xl mx-auto">
-          <h4 className="font-display font-bold text-base text-deep-navy mb-2">
+        <div className="bg-slate-50 dark:bg-dark-card rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-white/5 text-center max-w-xl mx-auto">
+          <h4 className="font-display font-bold text-base text-deep-navy dark:text-[#F8FAFC] mb-2">
             Still have an unanswered question?
           </h4>
-          <p className="font-sans text-xs text-muted-gray leading-relaxed mb-6">
+          <p className="font-sans text-xs text-muted-gray dark:text-slate-400 leading-relaxed mb-6">
             Our consumer care desks are operating live. Ask us directly on WhatsApp for custom requirements or immediate updates.
           </p>
           <button

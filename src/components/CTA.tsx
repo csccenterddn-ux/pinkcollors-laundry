@@ -22,11 +22,11 @@ export default function CTA({ onScheduleClick }: CTAProps) {
   };
 
   return (
-    <section id="cta-conversion" className="py-16 bg-white relative overflow-hidden">
+    <section id="cta-conversion" className="py-16 bg-white dark:bg-dark-bg relative overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Card wrapper */}
-        <div className="relative bg-deep-navy text-white rounded-[40px] px-6 py-12 sm:p-16 lg:p-20 overflow-hidden shadow-2xl border border-slate-800">
+        <div className="relative bg-deep-navy dark:bg-dark-card text-white rounded-[40px] px-6 py-12 sm:p-16 lg:p-20 overflow-hidden shadow-2xl border border-slate-800 dark:border-white/5 transition-colors duration-300">
           
           {/* Subtle accent lightings mapped to startup brand */}
           <div className="absolute top-[-30%] right-[-10%] w-[400px] h-[400px] rounded-full bg-primary-pink/15 blur-[120px] pointer-events-none" />

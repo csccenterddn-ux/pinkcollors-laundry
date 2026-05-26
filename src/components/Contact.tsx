@@ -63,7 +63,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-slate-50/70 via-white to-slate-50/40 relative overflow-hidden">
+    <section id="contact" className="py-24 bg-gradient-to-b from-slate-50/70 via-white to-slate-50/40 dark:from-dark-bg dark:via-dark-surface dark:to-dark-bg relative overflow-hidden transition-colors duration-300">
       {/* Decorative premium soft ambient glows */}
       <div className="absolute top-[-10%] right-[-10%] w-[400px] h-[400px] bg-gradient-to-br from-primary-pink/5 to-indigo-500/5 blur-[120px] pointer-events-none rounded-full" />
       <div className="absolute bottom-[5%] left-[-10%] w-[450px] h-[450px] bg-gradient-to-tr from-indigo-500/5 to-primary-pink/5 blur-[140px] pointer-events-none rounded-full" />
@@ -76,10 +76,10 @@ export default function Contact() {
             <Sparkles className="w-3.5 h-3.5 text-primary-pink" />
             <span>Support Center</span>
           </div>
-          <h2 className="font-display font-black text-3xl sm:text-4xl text-deep-navy tracking-tight leading-tight mb-4">
+          <h2 className="font-display font-black text-3xl sm:text-4xl text-deep-navy dark:text-[#F8FAFC] tracking-tight leading-tight mb-4">
             We're Always Listening
           </h2>
-          <p className="font-sans text-slate-500 text-sm sm:text-base leading-relaxed leading-normal">
+          <p className="font-sans text-slate-500 dark:text-slate-350 text-sm sm:text-base leading-relaxed leading-normal">
             Visit our state-of-the-art Patna processing studio or reach out with your questions. Our dedicated customer team is ready to assist you.
           </p>
         </div>
@@ -94,20 +94,20 @@ export default function Contact() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               
               {/* Visit Our Location */}
-              <div className="bg-white/75 backdrop-blur-md p-5 rounded-2xl border border-slate-200/50 shadow-[0_4px_20px_rgba(15,23,42,0.02)] hover:shadow-[0_8px_30px_rgba(15,23,42,0.05)] hover:-translate-y-0.5 transition-all duration-300 flex items-start gap-4 group">
+              <div className="bg-white/75 dark:bg-dark-card/85 backdrop-blur-md p-5 rounded-2xl border border-slate-200/50 dark:border-white/5 shadow-[0_4px_20px_rgba(15,23,42,0.02)] hover:shadow-[0_8px_30px_rgba(15,23,42,0.05)] hover:-translate-y-0.5 transition-all duration-300 flex items-start gap-4 group">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500/10 to-pink-500/5 text-primary-pink flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
                   <MapPin className="w-5 h-5" />
                 </div>
-                <div className="space-y-1">
-                  <h4 className="font-display font-bold text-xs text-deep-navy tracking-wider uppercase">Visit Our Location</h4>
-                  <p className="font-sans text-xs text-slate-500 leading-relaxed">
+                <div className="space-y-1 block">
+                  <h4 className="font-display font-bold text-xs text-deep-navy dark:text-slate-100 tracking-wider uppercase font-sans">Visit Our Location</h4>
+                  <p className="font-sans text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-sans">
                     North Patel Nagar, Patna, Bihar 800024
                   </p>
                   <a
                     href="https://maps.google.com/?q=North+Patel+Nagar,+Keshri+Nagar,+Patna,+Bihar+800024"
                     target="_blank"
                     rel="noreferrer"
-                    className="text-[10px] uppercase font-bold text-primary-pink hover:text-pink-600 transition-colors tracking-wider inline-flex items-center gap-1 mt-1"
+                    className="text-[10px] uppercase font-bold text-primary-pink hover:text-pink-600 transition-colors tracking-wider inline-flex items-center gap-1 mt-1 font-sans"
                   >
                     View Directions
                   </a>
@@ -115,45 +115,45 @@ export default function Contact() {
               </div>
 
               {/* Call Or WhatsApp */}
-              <div className="bg-white/75 backdrop-blur-md p-5 rounded-2xl border border-slate-200/50 shadow-[0_4px_20px_rgba(15,23,42,0.02)] hover:shadow-[0_8px_30px_rgba(15,23,42,0.05)] hover:-translate-y-0.5 transition-all duration-300 flex items-start gap-4 group">
+              <div className="bg-white/75 dark:bg-dark-card/85 backdrop-blur-md p-5 rounded-2xl border border-slate-200/50 dark:border-white/5 shadow-[0_4px_20px_rgba(15,23,42,0.02)] hover:shadow-[0_8px_30px_rgba(15,23,42,0.05)] hover:-translate-y-0.5 transition-all duration-300 flex items-start gap-4 group">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500/10 to-indigo-500/5 text-indigo-500 flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
                   <Phone className="w-5 h-5" />
                 </div>
-                <div className="space-y-1">
-                  <h4 className="font-display font-bold text-xs text-deep-navy tracking-wider uppercase">Call Or WhatsApp</h4>
-                  <p className="font-mono text-xs text-slate-600 font-semibold tracking-tight">
+                <div className="space-y-1 block">
+                  <h4 className="font-display font-bold text-xs text-deep-navy dark:text-slate-100 tracking-wider uppercase font-sans">Call Or WhatsApp</h4>
+                  <p className="font-mono text-xs text-slate-600 dark:text-slate-300 font-semibold tracking-tight">
                     +91 93001 19933
                   </p>
-                  <p className="text-[10px] text-emerald-500 font-sans font-medium">
+                  <p className="text-[10px] text-emerald-500 dark:text-emerald-400 font-sans font-medium">
                     Support is online 24/7
                   </p>
                 </div>
               </div>
 
               {/* Email Support */}
-              <div className="bg-white/75 backdrop-blur-md p-5 rounded-2xl border border-slate-200/50 shadow-[0_4px_20px_rgba(15,23,42,0.02)] hover:shadow-[0_8px_30px_rgba(15,23,42,0.05)] hover:-translate-y-0.5 transition-all duration-300 flex items-start gap-4 group">
+              <div className="bg-white/75 dark:bg-dark-card/85 backdrop-blur-md p-5 rounded-2xl border border-slate-200/50 dark:border-white/5 shadow-[0_4px_20px_rgba(15,23,42,0.02)] hover:shadow-[0_8px_30px_rgba(15,23,42,0.05)] hover:-translate-y-0.5 transition-all duration-300 flex items-start gap-4 group">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/10 to-purple-500/5 text-purple-500 flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
                   <Mail className="w-5 h-5" />
                 </div>
-                <div className="space-y-1">
-                  <h4 className="font-display font-bold text-xs text-deep-navy tracking-wider uppercase">Email Support</h4>
-                  <p className="font-mono text-xs text-slate-600 font-semibold tracking-tight">
+                <div className="space-y-1 block">
+                  <h4 className="font-display font-bold text-xs text-deep-navy dark:text-slate-100 tracking-wider uppercase font-sans">Email Support</h4>
+                  <p className="font-mono text-xs text-slate-600 dark:text-slate-300 font-semibold tracking-tight">
                     pinkcollars@yahoo.com
                   </p>
-                  <p className="text-[10px] text-slate-400 font-sans">
+                  <p className="text-[10px] text-slate-400 dark:text-slate-500 font-sans">
                     Expect reply in 3 hours
                   </p>
                 </div>
               </div>
 
               {/* Business Hours */}
-              <div className="bg-white/75 backdrop-blur-md p-5 rounded-2xl border border-slate-200/50 shadow-[0_4px_20px_rgba(15,23,42,0.02)] hover:shadow-[0_8px_30px_rgba(15,23,42,0.05)] hover:-translate-y-0.5 transition-all duration-300 flex items-start gap-4 group">
+              <div className="bg-white/75 dark:bg-dark-card/85 backdrop-blur-md p-5 rounded-2xl border border-slate-200/50 dark:border-white/5 shadow-[0_4px_20px_rgba(15,23,42,0.02)] hover:shadow-[0_8px_30px_rgba(15,23,42,0.05)] hover:-translate-y-0.5 transition-all duration-300 flex items-start gap-4 group">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500/10 to-orange-500/5 text-orange-500 flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform">
                   <Clock className="w-5 h-5" />
                 </div>
-                <div className="space-y-1">
-                  <h4 className="font-display font-bold text-xs text-deep-navy tracking-wider uppercase">Open 24/7 Across Patna</h4>
-                  <p className="font-sans text-xs text-slate-500 leading-relaxed">
+                <div className="space-y-1 block">
+                  <h4 className="font-display font-bold text-xs text-deep-navy dark:text-slate-100 tracking-wider uppercase font-sans">Open 24/7 Across Patna</h4>
+                  <p className="font-sans text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-sans">
                     Open 24 Hours / 7 Days
                   </p>
                   <p className="text-[10px] text-primary-pink font-sans font-semibold">
@@ -165,17 +165,17 @@ export default function Contact() {
             </div>
 
             {/* Google map preview card with Premium overlay integration */}
-            <div className="relative rounded-2xl overflow-hidden border border-slate-200/80 h-64 sm:h-72 shadow-lg group">
+            <div className="relative rounded-2xl overflow-hidden border border-slate-200/80 dark:border-white/5 h-64 sm:h-72 shadow-lg group">
               
               {/* Premium Glassmorphism Overlay */}
-              <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-md shadow-[0_8px_32px_rgba(15,23,42,0.1)] border border-white/40 px-3 py-2 rounded-xl flex items-center gap-2.5 transition-all duration-300 group-hover:shadow-[0_12px_40px_rgba(15,23,42,0.15)] group-hover:scale-[1.01]">
+              <div className="absolute top-4 left-4 z-10 bg-white/90 dark:bg-dark-card/90 backdrop-blur-md shadow-[0_8px_32px_rgba(15,23,42,0.1)] border border-white/40 dark:border-white/10 px-3 py-2 rounded-xl flex items-center gap-2.5 transition-all duration-300 group-hover:shadow-[0_12px_40px_rgba(15,23,42,0.15)] group-hover:scale-[1.01]">
                 <div className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </div>
                 <div className="flex items-center gap-1.5 whitespace-nowrap">
                   <MapPin className="w-3.5 h-3.5 text-primary-pink" />
-                  <span className="font-display font-bold text-[10px] tracking-wider uppercase text-deep-navy">Pickup Available Across Patna</span>
+                  <span className="font-display font-bold text-[10px] tracking-wider uppercase text-deep-navy dark:text-[#F8FAFC]">Pickup Available Across Patna</span>
                 </div>
               </div>
 
@@ -188,14 +188,14 @@ export default function Contact() {
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale-[20%] contrast-[110%] group-hover:scale-[1.03] transition-transform duration-500"
+                className="grayscale-[20%] contrast-[110%] dark:invert-[90%] dark:hue-rotate-180 group-hover:scale-[1.03] transition-transform duration-500"
               ></iframe>
             </div>
           </div>
 
           {/* Column 2: Interactive Contact Inquiry Form  */}
-          <div className="lg:col-span-1">
-            <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/70 shadow-[0_10px_40px_rgba(15,23,42,0.06)] relative overflow-hidden h-full flex flex-col justify-between">
+          <div className="lg:col-span-1 font-sans">
+            <div className="bg-white dark:bg-dark-card rounded-3xl p-6 sm:p-10 border border-slate-200/70 dark:border-white/5 shadow-[0_10px_40px_rgba(15,23,42,0.06)] relative overflow-hidden h-full flex flex-col justify-between transition-colors duration-300">
               
               {/* Premium Gradient Top Border */}
               <div className="absolute top-0 left-0 w-full h-[5px] bg-gradient-to-r from-primary-pink to-indigo-500" />
@@ -210,10 +210,10 @@ export default function Contact() {
                     className="flex flex-col h-full justify-between"
                   >
                     <div className="mb-6">
-                      <h3 className="font-display font-black text-xl sm:text-2xl text-deep-navy tracking-tight mb-1.5">
+                      <h3 className="font-display font-black text-xl sm:text-2xl text-deep-navy dark:text-[#F8FAFC] tracking-tight mb-1.5">
                         Submit An Inquiry
                       </h3>
-                      <p className="font-sans text-xs text-slate-400">
+                      <p className="font-sans text-xs text-slate-400 dark:text-slate-400">
                         Have specific corporate volume demands or laundry contracts? Leave us a line and we'll connect shortly.
                       </p>
                     </div>
@@ -222,7 +222,7 @@ export default function Contact() {
                       
                       {/* Name fields */}
                       <div className="space-y-1">
-                        <label className="text-[10px] font-bold text-deep-navy tracking-wider uppercase block">
+                        <label className="text-[10px] font-bold text-deep-navy dark:text-slate-200 tracking-wider uppercase block">
                           Your Name <span className="text-primary-pink">*</span>
                         </label>
                         <input
@@ -232,14 +232,14 @@ export default function Contact() {
                           placeholder="e.g. Priyanshu Ranjan"
                           value={formData.name}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 rounded-xl bg-slate-50/50 border border-slate-200/70 text-deep-navy text-xs font-semibold placeholder:text-slate-400 focus:bg-white focus:ring-4 focus:ring-primary-pink/5 focus:border-primary-pink focus:outline-none transition-all duration-300"
+                          className="w-full px-4 py-3 rounded-xl bg-slate-50/50 dark:bg-slate-900/50 border border-slate-200/70 dark:border-slate-800 text-deep-navy dark:text-slate-100 text-xs font-semibold placeholder:text-slate-400 focus:bg-white dark:focus:bg-slate-900 focus:ring-4 focus:ring-primary-pink/5 focus:border-primary-pink focus:outline-none transition-all duration-300"
                         />
                       </div>
 
                       {/* Phone & Email (Responsive Grid) */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="space-y-1">
-                          <label className="text-[10px] font-bold text-deep-navy tracking-wider uppercase block flex items-center gap-1">
+                          <label className="text-[10px] font-bold text-deep-navy dark:text-slate-200 tracking-wider uppercase block flex items-center gap-1">
                             <Smartphone className="w-3.5 h-3.5 text-slate-400" />
                             Phone Number <span className="text-primary-pink">*</span>
                           </label>
@@ -250,12 +250,12 @@ export default function Contact() {
                             placeholder="e.g. +91 91234 56789"
                             value={formData.phone}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 rounded-xl bg-slate-50/50 border border-slate-200/70 text-deep-navy text-xs font-semibold placeholder:text-slate-400 focus:bg-white focus:ring-4 focus:ring-primary-pink/5 focus:border-primary-pink focus:outline-none transition-all duration-300"
+                            className="w-full px-4 py-3 rounded-xl bg-slate-50/50 dark:bg-slate-900/50 border border-slate-200/70 dark:border-slate-800 text-deep-navy dark:text-slate-100 text-xs font-semibold placeholder:text-slate-400 focus:bg-white dark:focus:bg-slate-900 focus:ring-4 focus:ring-primary-pink/5 focus:border-primary-pink focus:outline-none transition-all duration-300"
                           />
                         </div>
 
                         <div className="space-y-1">
-                          <label className="text-[10px] font-bold text-deep-navy tracking-wider uppercase block">
+                          <label className="text-[10px] font-bold text-deep-navy dark:text-slate-200 tracking-wider uppercase block">
                             Email address
                           </label>
                           <input
@@ -264,14 +264,14 @@ export default function Contact() {
                             placeholder="e.g. user@example.com"
                             value={formData.email}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 rounded-xl bg-slate-50/50 border border-slate-200/70 text-deep-navy text-xs font-semibold placeholder:text-slate-400 focus:bg-white focus:ring-4 focus:ring-primary-pink/5 focus:border-primary-pink focus:outline-none transition-all duration-300"
+                            className="w-full px-4 py-3 rounded-xl bg-slate-50/50 dark:bg-slate-900/50 border border-slate-200/70 dark:border-slate-800 text-deep-navy dark:text-slate-100 text-xs font-semibold placeholder:text-slate-400 focus:bg-white dark:focus:bg-slate-900 focus:ring-4 focus:ring-primary-pink/5 focus:border-primary-pink focus:outline-none transition-all duration-300"
                           />
                         </div>
                       </div>
 
                       {/* Dropdown service selector */}
                       <div className="space-y-1">
-                        <label className="text-[10px] font-bold text-deep-navy tracking-wider uppercase block">
+                        <label className="text-[10px] font-bold text-deep-navy dark:text-slate-200 tracking-wider uppercase block">
                           Core Service of Interest
                         </label>
                         <div className="relative">
@@ -279,10 +279,10 @@ export default function Contact() {
                             name="service"
                             value={formData.service}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 rounded-xl bg-slate-50/50 border border-slate-200/70 text-deep-navy text-xs font-semibold focus:bg-white focus:ring-4 focus:ring-primary-pink/5 focus:border-primary-pink focus:outline-none transition-all duration-300 appearance-none cursor-pointer"
+                            className="w-full px-4 py-3 rounded-xl bg-slate-50/50 dark:bg-slate-900/50 border border-slate-200/70 dark:border-slate-800 text-deep-navy dark:text-slate-100 text-xs font-semibold focus:bg-white dark:focus:bg-slate-900 focus:ring-4 focus:ring-primary-pink/5 focus:border-primary-pink focus:outline-none transition-all duration-300 appearance-none cursor-pointer"
                           >
                             {servicesList.map((srv) => (
-                              <option key={srv} value={srv}>
+                              <option key={srv} value={srv} className="dark:bg-slate-900 text-slate-900 dark:text-slate-100">
                                 {srv}
                               </option>
                             ))}
@@ -296,8 +296,8 @@ export default function Contact() {
                       </div>
 
                       {/* Message body */}
-                      <div className="space-y-1">
-                        <label className="text-[10px] font-bold text-deep-navy tracking-wider uppercase block">
+                      <div className="space-y-1 font-sans">
+                        <label className="text-[10px] font-bold text-deep-navy dark:text-slate-200 tracking-wider uppercase block">
                           Explain your inquiry <span className="text-primary-pink">*</span>
                         </label>
                         <textarea
@@ -307,14 +307,14 @@ export default function Contact() {
                           value={formData.message}
                           onChange={handleInputChange}
                           placeholder="Tell us about your requirements of wet wash, contracts, etc..."
-                          className="w-full px-4 py-3 rounded-xl bg-slate-50/50 border border-slate-200/70 text-deep-navy text-xs font-semibold placeholder:text-slate-400 focus:bg-white focus:ring-4 focus:ring-primary-pink/5 focus:border-primary-pink focus:outline-none transition-all duration-300 resize-none"
+                          className="w-full px-4 py-3 rounded-xl bg-slate-50/50 dark:bg-slate-900/50 border border-slate-200/70 dark:border-slate-800 text-deep-navy dark:text-slate-100 text-xs font-semibold placeholder:text-slate-400 focus:bg-white dark:focus:bg-slate-900 focus:ring-4 focus:ring-primary-pink/5 focus:border-primary-pink focus:outline-none transition-all duration-300 resize-none font-sans"
                         />
                       </div>
 
                       {/* Submit form line with luxury design */}
                       <button
                         type="submit"
-                        className="w-full px-6 py-3.5 rounded-xl bg-deep-navy text-white font-bold text-xs uppercase tracking-widest hover:bg-gradient-to-r hover:from-primary-pink hover:to-indigo-500 hover:shadow-lg hover:shadow-primary-pink/15 hover:scale-[1.01] active:scale-99 transition-all duration-300 flex items-center justify-center gap-2.5 cursor-pointer self-start"
+                        className="w-full px-6 py-3.5 rounded-xl bg-deep-navy dark:bg-slate-800 text-white font-bold text-xs uppercase tracking-widest hover:bg-gradient-to-r hover:from-primary-pink hover:to-indigo-500 hover:shadow-lg hover:shadow-primary-pink/15 hover:scale-[1.01] active:scale-99 transition-all duration-300 flex items-center justify-center gap-2.5 cursor-pointer self-start"
                       >
                         <Send className="w-3.5 h-3.5" />
                         Send Inquiry
@@ -334,11 +334,11 @@ export default function Contact() {
                       <CheckCircle2 className="w-8 h-8" />
                     </div>
 
-                    <h3 className="font-display font-black text-2xl text-deep-navy tracking-tight mb-2">
+                    <h3 className="font-display font-black text-2xl text-deep-navy dark:text-[#F8FAFC] tracking-tight mb-2">
                       Inquiry Logged!
                     </h3>
-                    <p className="font-sans text-xs text-slate-500 max-w-sm mx-auto mb-8">
-                      Thank you for contacting us. We have cached your dispatch request, <strong className="text-deep-navy font-semibold">{formData.name}</strong>. Our team will review your message immediately.
+                    <p className="font-sans text-xs text-slate-500 dark:text-slate-400 max-w-sm mx-auto mb-8">
+                      Thank you for contacting us. We have cached your dispatch request, <strong className="text-deep-navy dark:text-slate-200 font-semibold">{formData.name}</strong>. Our team will review your message immediately.
                     </p>
 
                     <div className="space-y-3.5 w-full max-w-xs mx-auto">

@@ -4,7 +4,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="site-footer" className="bg-deep-navy text-slate-400 py-16 sm:py-20 border-t border-slate-800 relative overflow-hidden">
+    <footer id="site-footer" className="bg-deep-navy dark:bg-dark-bg text-slate-400 py-16 sm:py-20 border-t border-slate-800 dark:border-white/5 relative overflow-hidden transition-colors duration-300">
       
       {/* Accent back-glow lights */}
       <div className="absolute bottom-0 right-[10%] w-80 h-80 rounded-full bg-primary-pink/5 blur-[100px] pointer-events-none" />
@@ -159,7 +159,7 @@ export default function Footer() {
         </div>
 
         {/* Footer legalities row - Centered on mobile */}
-        <div className="pt-8 border-t border-slate-800 text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-4">
+        <div className="pt-8 border-t border-slate-800 dark:border-white/5 text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-4">
           <p>© {currentYear} Pinkcollars Laundry. All rights reserved across Patna, Bihar.</p>
           <div className="flex items-center justify-center gap-1.5 text-[11px] font-sans">
             <span>Made with precision for luxury garments</span>
