@@ -27,18 +27,14 @@
     box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.01);
   }
   .glassmorphism {
-    background: rgba(255, 255, 255, 0.82);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
   .glassmorphism-dark {
-    background: rgba(11, 17, 32, 0.88);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    background: rgba(11, 17, 32, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
   
   /* Realistic, high-visibility GPU-accelerated keyframes for water bubble effects with wobbling and popping in the footer */
@@ -193,13 +189,13 @@ html {
 }
 
 /* Explicit fallback support for -webkit-backdrop-filter across all standard Tailwind backdrop-blur utilities on iOS WebKit */
-.backdrop-blur-sm { -webkit-backdrop-filter: blur(2px) !important; backdrop-filter: blur(2px) !important; }
-.backdrop-blur { -webkit-backdrop-filter: blur(4px) !important; backdrop-filter: blur(4px) !important; }
-.backdrop-blur-md { -webkit-backdrop-filter: blur(6px) !important; backdrop-filter: blur(6px) !important; }
-.backdrop-blur-lg { -webkit-backdrop-filter: blur(10px) !important; backdrop-filter: blur(10px) !important; }
-.backdrop-blur-xl { -webkit-backdrop-filter: blur(14px) !important; backdrop-filter: blur(14px) !important; }
-.backdrop-blur-2xl { -webkit-backdrop-filter: blur(18px) !important; backdrop-filter: blur(18px) !important; }
-.backdrop-blur-3xl { -webkit-backdrop-filter: blur(20px) !important; backdrop-filter: blur(20px) !important; }
+.backdrop-blur-sm { -webkit-backdrop-filter: blur(4px) !important; backdrop-filter: blur(4px) !important; }
+.backdrop-blur { -webkit-backdrop-filter: blur(8px) !important; backdrop-filter: blur(8px) !important; }
+.backdrop-blur-md { -webkit-backdrop-filter: blur(12px) !important; backdrop-filter: blur(12px) !important; }
+.backdrop-blur-lg { -webkit-backdrop-filter: blur(16px) !important; backdrop-filter: blur(16px) !important; }
+.backdrop-blur-xl { -webkit-backdrop-filter: blur(24px) !important; backdrop-filter: blur(24px) !important; }
+.backdrop-blur-2xl { -webkit-backdrop-filter: blur(40px) !important; backdrop-filter: blur(40px) !important; }
+.backdrop-blur-3xl { -webkit-backdrop-filter: blur(64px) !important; backdrop-filter: blur(64px) !important; }
 
 /* Force iOS GPU Core hardware compositing for floating bubble layer elements to avoid redraw latency */
 .animate-bubble-footer-1,
