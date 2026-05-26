@@ -76,16 +76,46 @@ export default function FaqSection() {
     },
   };
 
+  const sectionVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.05,
+      },
+    },
+  };
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: 25 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
+
   return (
     <section id="faq" className="py-24 bg-white dark:bg-dark-bg relative overflow-hidden transition-colors duration-300">
       {/* Decorative background glow bubble */}
       <div className="absolute top-[30%] left-[-10%] w-96 h-96 rounded-full bg-primary-pink/5 blur-[120px]" />
       <div className="absolute bottom-[20%] right-[-10%] w-96 h-96 rounded-full bg-indigo-500/5 blur-[120px]" />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        variants={sectionVariants}
+        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+      >
         
         {/* Header Block */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <motion.div variants={headerVariants} className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-pink/10 border border-primary-pink/20 text-primary-pink text-xs font-bold uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Got Questions?</span>
@@ -96,16 +126,13 @@ export default function FaqSection() {
           <p className="font-sans text-muted-gray dark:text-slate-400 text-sm sm:text-base leading-relaxed">
             Everything you need to know about our premium operations, water-conditioning chemistry, and Patna service areas.
           </p>
-        </div>
+        </motion.div>
 
         {/* FAQs Accordion Block */}
         <motion.div
           id="faq-accordions"
           className="space-y-4 mb-16"
           variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
         >
           {faqs.map((faq, index) => {
             const isOpen = activeIndex === index;
@@ -159,7 +186,7 @@ export default function FaqSection() {
         </motion.div>
 
         {/* Support helper CTA */}
-        <div className="bg-slate-50 dark:bg-dark-card rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-white/5 text-center max-w-xl mx-auto">
+        <motion.div variants={headerVariants} className="bg-slate-50 dark:bg-dark-card rounded-2xl p-6 sm:p-8 border border-slate-100 dark:border-white/5 text-center max-w-xl mx-auto">
           <h4 className="font-display font-bold text-base text-deep-navy dark:text-[#F8FAFC] mb-2">
             Still have an unanswered question?
           </h4>
@@ -173,9 +200,9 @@ export default function FaqSection() {
             <WhatsAppIcon className="w-4.5 h-4.5 text-white" />
             Connect on WhatsApp
           </button>
-        </div>
+        </motion.div>
 
-      </div>
+      </motion.div>
     </section>
   );
 }

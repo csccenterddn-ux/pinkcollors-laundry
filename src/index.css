@@ -27,14 +27,18 @@
     box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.01);
   }
   .glassmorphism {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
   .glassmorphism-dark {
-    background: rgba(11, 17, 32, 0.8);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(11, 17, 32, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
   
   /* Realistic, high-visibility GPU-accelerated keyframes for water bubble effects with wobbling and popping in the footer */
@@ -163,6 +167,51 @@
 html {
   scroll-behavior: smooth;
   font-family: var(--font-sans);
+  -webkit-overflow-scrolling: touch; /* Kinetic momentum scrolling on iOS */
+}
+
+/* Safari / Mobile iOS Dynamic Viewport & Height Optimizations */
+@supports (min-height: 100dvh) {
+  .min-h-screen {
+    min-height: 100dvh !important;
+  }
+}
+@supports (height: 100dvh) {
+  .h-screen {
+    height: 100dvh !important;
+  }
+}
+@supports (min-height: 85svh) {
+  #home {
+    min-height: 85svh !important;
+  }
+}
+@supports (min-height: 85dvh) {
+  #home {
+    min-height: 85dvh !important;
+  }
+}
+
+/* Explicit fallback support for -webkit-backdrop-filter across all standard Tailwind backdrop-blur utilities on iOS WebKit */
+.backdrop-blur-sm { -webkit-backdrop-filter: blur(2px) !important; backdrop-filter: blur(2px) !important; }
+.backdrop-blur { -webkit-backdrop-filter: blur(4px) !important; backdrop-filter: blur(4px) !important; }
+.backdrop-blur-md { -webkit-backdrop-filter: blur(6px) !important; backdrop-filter: blur(6px) !important; }
+.backdrop-blur-lg { -webkit-backdrop-filter: blur(10px) !important; backdrop-filter: blur(10px) !important; }
+.backdrop-blur-xl { -webkit-backdrop-filter: blur(14px) !important; backdrop-filter: blur(14px) !important; }
+.backdrop-blur-2xl { -webkit-backdrop-filter: blur(18px) !important; backdrop-filter: blur(18px) !important; }
+.backdrop-blur-3xl { -webkit-backdrop-filter: blur(20px) !important; backdrop-filter: blur(20px) !important; }
+
+/* Force iOS GPU Core hardware compositing for floating bubble layer elements to avoid redraw latency */
+.animate-bubble-footer-1,
+.animate-bubble-footer-2,
+.animate-bubble-footer-3 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 0);
 }
 
 /* Custom premium scrollbar */

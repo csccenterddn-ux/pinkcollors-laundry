@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+import ReferralWidget from "./ReferralWidget";
 import {
   WashingMachine,
   Shirt,
@@ -86,6 +87,67 @@ import { Service } from "../types";
 
 export default function Services() {
   const [activeTab, setActiveTab] = useState<"standard" | "calculator">("standard");
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.97 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 110,
+        damping: 15,
+      },
+    },
+    hover: {
+      y: -8,
+      scale: 1.03,
+      boxShadow: "0 30px 60px -15px rgba(15, 23, 42, 0.12), 0 15px 25px -10px rgba(15, 23, 42, 0.08)",
+      borderColor: "rgba(244, 63, 94, 0.25)",
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 25,
+      },
+    },
+  };
+
+  const iconWrapperVariants = {
+    visible: { scale: 1, rotate: 0 },
+    hover: {
+      scale: 1.12,
+      rotate: -4,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 14,
+      },
+    },
+  };
+
+  const iconVariants = {
+    visible: { rotate: 0, scale: 1 },
+    hover: {
+      rotate: 15,
+      scale: 1.1,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 10,
+      },
+    },
+  };
 
   const services: Service[] = [
     {
@@ -269,35 +331,36 @@ export default function Services() {
  
         {/* Tab content 1: Service Cards */}
         {activeTab === "standard" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
             {services.map((service, index) => (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 24, scale: 0.98 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                whileHover={{ 
-                  y: -8, 
-                  scale: 1.03,
-                  boxShadow: "0 30px 60px -15px rgba(15, 23, 42, 0.12), 0 15px 25px -10px rgba(15, 23, 42, 0.08)",
-                  borderColor: "rgba(244, 63, 94, 0.25)"
-                }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ 
-                  hover: { type: "spring", stiffness: 400, damping: 25 },
-                  default: { type: "spring", stiffness: 120, damping: 16, delay: index * 0.04 }
-                }}
+                variants={cardVariants}
+                whileHover="hover"
                 className="group relative bg-slate-50 dark:bg-dark-card hover:bg-white dark:hover:bg-dark-card/90 rounded-3xl p-6 border border-slate-100/80 dark:border-white/5 flex flex-col justify-between overflow-hidden cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-300"
               >
                 {/* Neon back glow */}
                 <div className="absolute top-[-50%] right-[-50%] w-[150px] h-[150px] rounded-full bg-primary-pink/0 group-hover:bg-primary-pink/5 blur-[35px] transition-all duration-500 pointer-events-none" />
  
                 <div>
-                  {/* Premium Minimalist Service Icon Container */}
-                  <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/50 dark:border-white/5 group-hover:bg-pink-50/50 dark:group-hover:bg-pink-950/20 group-hover:border-primary-pink/25 flex items-center justify-center mb-6 shadow-[0_4px_12px_rgba(15,23,42,0.01)] group-hover:shadow-[0_8px_24px_rgba(244,63,94,0.05)] transition-all duration-350 group-hover:scale-110">
-                    <div className="text-deep-navy/85 dark:text-slate-200 group-hover:text-primary-pink transition-colors duration-300">
+                  {/* Premium Minimalist Service Icon Container with Staggered Interactive Scaling/Rotation on Hover */}
+                  <motion.div 
+                    variants={iconWrapperVariants}
+                    className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/50 dark:border-white/5 group-hover:bg-pink-50/50 dark:group-hover:bg-pink-950/20 group-hover:border-primary-pink/25 flex items-center justify-center mb-6 shadow-[0_4px_12px_rgba(15,23,42,0.01)] group-hover:shadow-[0_8px_24px_rgba(244,63,94,0.05)] transition-all duration-350"
+                  >
+                    <motion.div 
+                      variants={iconVariants}
+                      className="text-deep-navy/85 dark:text-slate-200 group-hover:text-primary-pink transition-colors duration-300"
+                    >
                       {getServiceIcon(service.iconName)}
-                    </div>
-                  </div>
+                    </motion.div>
+                  </motion.div>
  
                   <span className="font-mono text-[10px] text-primary-pink uppercase font-extrabold tracking-widest block mb-1">
                     {service.priceDetail}
@@ -327,7 +390,7 @@ export default function Services() {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
  
         {/* Tab content 2: Pricing Estimator Widget */}
@@ -361,76 +424,82 @@ export default function Services() {
                       
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         {/* Wet Wash controls */}
-                        <div className="flex items-center justify-between p-2 rounded-xl bg-slate-50 dark:bg-dark-surface border border-slate-100 dark:border-white/5">
+                        <div className="flex items-center justify-between p-3.5 sm:p-2.5 rounded-xl bg-slate-50 dark:bg-dark-surface border border-slate-100 dark:border-white/5">
                           <div className="flex flex-col">
-                            <span className="text-[10px] font-bold text-deep-navy/80 dark:text-slate-300">Wet Wash</span>
-                            <span className="text-[10px] text-primary-pink font-semibold">₹{item.wetWash}/pc</span>
+                            <span className="text-xs sm:text-[10px] font-bold text-deep-navy/80 dark:text-slate-300">Wet Wash</span>
+                            <span className="text-xs sm:text-[10px] text-primary-pink font-semibold">₹{item.wetWash}/pc</span>
                           </div>
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-3 sm:gap-2">
                             <button
                               onClick={() => updateQuantity(item.name, "wetWash", -1)}
-                              className="w-6 h-6 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              className="w-11 h-11 sm:w-8 sm:h-8 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              aria-label={`Decrease ${item.name} wet wash quantity`}
                             >
-                              <Minus className="w-3.5 h-3.5" />
+                              <Minus className="w-4.5 h-4.5 sm:w-3.5 sm:h-3.5" />
                             </button>
-                            <span className="w-6 text-center font-mono text-xs font-bold text-deep-navy dark:text-slate-200">
+                            <span className="w-8 sm:w-6 text-center font-mono text-sm sm:text-xs font-bold text-deep-navy dark:text-slate-200">
                               {quantities[item.name].wetWash}
                             </span>
                             <button
                               onClick={() => updateQuantity(item.name, "wetWash", 1)}
-                              className="w-6 h-6 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              className="w-11 h-11 sm:w-8 sm:h-8 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              aria-label={`Increase ${item.name} wet wash quantity`}
                             >
-                              <Plus className="w-3.5 h-3.5" />
+                              <Plus className="w-4.5 h-4.5 sm:w-3.5 sm:h-3.5" />
                             </button>
                           </div>
                         </div>
- 
+
                         {/* Dry Clean controls */}
-                        <div className="flex items-center justify-between p-2 rounded-xl bg-slate-50 dark:bg-dark-surface border border-slate-100 dark:border-white/5">
+                        <div className="flex items-center justify-between p-3.5 sm:p-2.5 rounded-xl bg-slate-50 dark:bg-dark-surface border border-slate-100 dark:border-white/5">
                           <div className="flex flex-col">
-                            <span className="text-[10px] font-bold text-deep-navy/80 dark:text-slate-300">Dry Clean</span>
-                            <span className="text-[10px] text-primary-pink font-semibold">₹{item.dryClean}/pc</span>
+                            <span className="text-xs sm:text-[10px] font-bold text-deep-navy/80 dark:text-slate-300">Dry Clean</span>
+                            <span className="text-xs sm:text-[10px] text-primary-pink font-semibold">₹{item.dryClean}/pc</span>
                           </div>
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-3 sm:gap-2">
                             <button
                               onClick={() => updateQuantity(item.name, "dryClean", -1)}
-                              className="w-6 h-6 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              className="w-11 h-11 sm:w-8 sm:h-8 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              aria-label={`Decrease ${item.name} dry clean quantity`}
                             >
-                              <Minus className="w-3.5 h-3.5" />
+                              <Minus className="w-4.5 h-4.5 sm:w-3.5 sm:h-3.5" />
                             </button>
-                            <span className="w-6 text-center font-mono text-xs font-bold text-deep-navy dark:text-slate-200">
+                            <span className="w-8 sm:w-6 text-center font-mono text-sm sm:text-xs font-bold text-deep-navy dark:text-slate-200">
                               {quantities[item.name].dryClean}
                             </span>
                             <button
                               onClick={() => updateQuantity(item.name, "dryClean", 1)}
-                              className="w-6 h-6 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              className="w-11 h-11 sm:w-8 sm:h-8 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              aria-label={`Increase ${item.name} dry clean quantity`}
                             >
-                              <Plus className="w-3.5 h-3.5" />
+                              <Plus className="w-4.5 h-4.5 sm:w-3.5 sm:h-3.5" />
                             </button>
                           </div>
                         </div>
- 
+
                         {/* Iron controls */}
-                        <div className="flex items-center justify-between p-2 rounded-xl bg-slate-50 dark:bg-dark-surface border border-slate-100 dark:border-white/5">
+                        <div className="flex items-center justify-between p-3.5 sm:p-2.5 rounded-xl bg-slate-50 dark:bg-dark-surface border border-slate-100 dark:border-white/5">
                           <div className="flex flex-col">
-                            <span className="text-[10px] font-bold text-deep-navy/80 dark:text-slate-300">Steam Iron</span>
-                            <span className="text-[10px] text-primary-pink font-semibold">₹{item.iron}/pc</span>
+                            <span className="text-xs sm:text-[10px] font-bold text-deep-navy/80 dark:text-slate-300">Steam Iron</span>
+                            <span className="text-xs sm:text-[10px] text-primary-pink font-semibold">₹{item.iron}/pc</span>
                           </div>
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-3 sm:gap-2">
                             <button
                               onClick={() => updateQuantity(item.name, "iron", -1)}
-                              className="w-6 h-6 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              className="w-11 h-11 sm:w-8 sm:h-8 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              aria-label={`Decrease ${item.name} steam iron quantity`}
                             >
-                              <Minus className="w-3.5 h-3.5" />
+                              <Minus className="w-4.5 h-4.5 sm:w-3.5 sm:h-3.5" />
                             </button>
-                            <span className="w-6 text-center font-mono text-xs font-bold text-deep-navy dark:text-slate-200">
+                            <span className="w-8 sm:w-6 text-center font-mono text-sm sm:text-xs font-bold text-deep-navy dark:text-slate-200">
                               {quantities[item.name].iron}
                             </span>
                             <button
                               onClick={() => updateQuantity(item.name, "iron", 1)}
-                              className="w-6 h-6 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              className="w-11 h-11 sm:w-8 sm:h-8 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-primary-pink hover:text-white transition cursor-pointer"
+                              aria-label={`Increase ${item.name} steam iron quantity`}
                             >
-                              <Plus className="w-3.5 h-3.5" />
+                              <Plus className="w-4.5 h-4.5 sm:w-3.5 sm:h-3.5" />
                             </button>
                           </div>
                         </div>
@@ -507,6 +576,17 @@ export default function Services() {
               </div>
 
             </div>
+          </motion.div>
+        )}
+
+        {/* Tab content 2: Pricing Estimator Widget (Referral Card rendered underneath for maximum conversion) */}
+        {activeTab === "calculator" && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <ReferralWidget />
           </motion.div>
         )}
 
