@@ -77,7 +77,7 @@ export default function ReferralWidget() {
 
   const handleWhatsAppShare = () => {
     const encoded = encodeURIComponent(shareText);
-    window.open(`https://api.whatsapp.com/send?text=${encoded}`, "_blank");
+    window.open(`https://wa.me/?text=${encoded}`, "_blank");
   };
 
   return (

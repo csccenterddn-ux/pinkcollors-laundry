@@ -18,7 +18,8 @@ interface CTAProps {
 
 export default function CTA({ onScheduleClick }: CTAProps) {
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/919300119933?text=Hi%20Pinkcollars%20Laundry!%2520I'd%20like%20to%20book%2520an%20express%20laundry%20pickup.", "_blank");
+    const message = "Hi Pinkcollars Laundry! I'd like to book an express laundry pickup.";
+    window.open(`https://wa.me/919300119933?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   return (

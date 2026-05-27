@@ -58,8 +58,8 @@ export default function Contact() {
   };
 
   const triggerInquiryWhatsApp = () => {
-    const msg = `Hi Pinkcollars Laundry! I've sent an inquiry via your Contact Form:%0A%0A👤 *Name*: ${formData.name}%0A✉️ *Email*: ${formData.email || "N/A"}%0A📞 *Phone*: ${formData.phone}%0A🧺 *Interest*: ${formData.service}%0A📝 *Message*: ${formData.message}`;
-    window.open(`https://wa.me/919300119933?text=${msg}`, "_blank");
+    const msg = `Hi Pinkcollars Laundry! I've sent an inquiry via your Contact Form:\n\n👤 *Name*: ${formData.name}\n✉️ *Email*: ${formData.email || "N/A"}\n📞 *Phone*: ${formData.phone}\n🧺 *Interest*: ${formData.service}\n📝 *Message*: ${formData.message}`;
+    window.open(`https://wa.me/919300119933?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (

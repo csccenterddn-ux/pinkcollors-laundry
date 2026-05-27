@@ -17,7 +17,8 @@ interface FloatingWhatsAppProps {
 
 export default function FloatingWhatsApp({ onScheduleClick }: FloatingWhatsAppProps) {
   const triggerWhatsApp = () => {
-    window.open("https://wa.me/919300119933?text=Hi%20Pinkcollars%20Laundry!%2520I'd%20like%20to%21%20book%20a%20doorstep%20pickup.", "_blank");
+    const message = "Hi Pinkcollars Laundry! I'd like to book a doorstep pickup.";
+    window.open(`https://wa.me/919300119933?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   return (

@@ -41,7 +41,7 @@ export default function Footer() {
 
         {/* Bubble 4: Center Rise */}
         <div 
-          className="absolute bottom-[-40px] left-[48%] w-10 h-10 rounded-full border border-white/70 dark:border-white/40 bg-gradient-to-tr from-white/8 to-white/0 shadow-[inset_-2.2px_-2.2px_7px_rgba(255,255,255,0.9)] animate-bubble-footer-1 hidden sm:block" 
+          className="absolute bottom-[-40px] left-[48%] w-10 h-10 rounded-full border border-white/70 dark:border-white/40 bg-gradient-to-tr from-white/8 to-white/0 shadow-[inset_-2.2px_-2.2px_7px_rgba(255,255,255,0.9)] animate-bubble-footer-1" 
           style={{ animationDelay: "6s" }}
         >
           <div className="absolute top-1 left-1.2 w-[38%] h-[20%] rounded-full bg-white/95 rotate-[-15deg]" />
@@ -49,7 +49,7 @@ export default function Footer() {
 
         {/* Bubble 5: Middle Right Rise */}
         <div 
-          className="absolute bottom-[-50px] left-[64%] w-12 h-12 rounded-full border border-white/70 dark:border-white/40 bg-gradient-to-tr from-indigo-500/5 via-white/1 to-pink-500/5 shadow-[inset_-2.8px_-2.8px_8.5px_rgba(255,255,255,0.9),0_8px_16px_rgba(99,102,241,0.08)] animate-bubble-footer-2 hidden md:block" 
+          className="absolute bottom-[-50px] left-[64%] w-12 h-12 rounded-full border border-white/70 dark:border-white/40 bg-gradient-to-tr from-indigo-500/5 via-white/1 to-pink-500/5 shadow-[inset_-2.8px_-2.8px_8.5px_rgba(255,255,255,0.9),0_8px_16px_rgba(99,102,241,0.08)] animate-bubble-footer-2" 
           style={{ animationDelay: "9s" }}
         >
           <div className="absolute top-1 left-1.5 w-[38%] h-[20%] rounded-full bg-gradient-to-b from-white/95 to-white/20 rotate-[-15deg] shadow-[0_1px_2px_rgba(255,255,255,0.8)]" />
@@ -67,7 +67,7 @@ export default function Footer() {
 
         {/* Bubble 7: Right Edge Soft Mini */}
         <div 
-          className="absolute bottom-[-40px] right-[8%] w-9 h-9 rounded-full border border-white/70 dark:border-white/45 bg-gradient-to-tr from-blue-500/4 via-white/1 to-pink-500/4 shadow-[inset_-1.8px_-1.8px_5.5px_rgba(255,255,255,0.9)] animate-bubble-footer-1 hidden md:block" 
+          className="absolute bottom-[-40px] right-[8%] w-9 h-9 rounded-full border border-white/70 dark:border-white/45 bg-gradient-to-tr from-blue-500/4 via-white/1 to-pink-500/4 shadow-[inset_-1.8px_-1.8px_5.5px_rgba(255,255,255,0.9)] animate-bubble-footer-1" 
           style={{ animationDelay: "11s" }}
         >
           <div className="absolute top-0.8 left-1 w-[40%] h-[22%] rounded-full bg-white/95 rotate-[-15deg]" />

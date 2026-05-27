@@ -257,10 +257,10 @@ export default function Services() {
         if (q.iron > 0) parts.push(`${q.iron}x Iron`);
         return `${item.name} (${parts.join(", ")})`;
       })
-      .join("%0A");
+      .join("\n");
 
-    const message = `Hi Pinkcollars Laundry! I've estimated my laundry needs on your website:%0A%0A${selectedText}%0A%0AEstimated Total: ₹${calculateTotal()}%0A%0AI'd like to book a doorstep pickup for these!`;
-    window.open(`https://wa.me/919300119933?text=${message}`, "_blank");
+    const message = `Hi Pinkcollars Laundry! I've estimated my laundry needs on your website:\n\n${selectedText}\n\nEstimated Total: ₹${calculateTotal()}\n\nI'd like to book a doorstep pickup for these!`;
+    window.open(`https://wa.me/919300119933?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   const getServiceIcon = (iconName: string) => {

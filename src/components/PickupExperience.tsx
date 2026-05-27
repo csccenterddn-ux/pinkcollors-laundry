@@ -68,8 +68,8 @@ export default function PickupExperience() {
   };
 
   const handleTriggerWhatsApp = () => {
-    const wMessage = `Hi Pinkcollars Laundry! I've booked a doorstep laundry pickup via your website Form:%0A%0A👤 *Name*: ${formData.fullName}%0A📞 *Phone*: ${formData.phone}%0A🧺 *Service*: ${formData.serviceType}%0A📅 *Date*: ${formData.pickupDate}%0A🕒 *Time Slot*: ${formData.pickupTime}%0A📍 *Address*: ${formData.address}${formData.notes ? `%0A📝 *Notes*: ${formData.notes}` : ""}%0A%0APlease dispatch a courier for confirmation!`;
-    window.open(`https://wa.me/919300119933?text=${wMessage}`, "_blank");
+    const wMessage = `Hi Pinkcollars Laundry! I've booked a doorstep laundry pickup via your website Form:\n\n👤 *Name*: ${formData.fullName}\n📞 *Phone*: ${formData.phone}\n🧺 *Service*: ${formData.serviceType}\n📅 *Date*: ${formData.pickupDate}\n🕒 *Time Slot*: ${formData.pickupTime}\n📍 *Address*: ${formData.address}${formData.notes ? `\n📝 *Notes*: ${formData.notes}` : ""}\n\nPlease dispatch a courier for confirmation!`;
+    window.open(`https://wa.me/919300119933?text=${encodeURIComponent(wMessage)}`, "_blank");
   };
 
   return (

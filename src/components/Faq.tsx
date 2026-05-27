@@ -49,7 +49,8 @@ export default function FaqSection() {
   };
 
   const handleSupportClick = () => {
-    window.open("https://wa.me/919300119933?text=Hi%20Pinkcollars%2520Laundry!%20I%20have%20a%20question%20not%20listed%20on%20your%20FAQ.", "_blank");
+    const message = "Hi Pinkcollars Laundry! I have a question not listed on your FAQ.";
+    window.open(`https://wa.me/919300119933?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   const containerVariants = {
